@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>james&#39;s web log</title>
+    <link>https://kazimuth.github.io/blog/</link>
+    <description>Recent content on james&#39;s web log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jul 2022 18:14:54 -0400</lastBuildDate><atom:link href="https://kazimuth.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Only Algorithm for Hard Problems: Shake and Pull Gently</title>
+      <link>https://kazimuth.github.io/blog/post/shake-and-pull-gently/</link>
+      <pubDate>Fri, 01 Jul 2022 18:14:54 -0400</pubDate>
+      
+      <guid>https://kazimuth.github.io/blog/post/shake-and-pull-gently/</guid>
+      
+      <description>&lt;p&gt;&lt;strong&gt;(Or, &amp;ldquo;regularized greedy algorithms and their applications.&amp;rdquo;)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;James Gilles&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Algorithm&amp;rdquo; is one of those words that sounds fancier than it really deserves. We hear all the time about the &amp;ldquo;facebook algorithm&amp;rdquo;, the &amp;ldquo;youtube algorithm&amp;rdquo;, &amp;ldquo;high frequency trading algorithms&amp;rdquo;, &amp;ldquo;artificial intelligence algorithms&amp;rdquo;, and so on. What are these, really?&lt;/p&gt;
+&lt;p&gt;The &amp;ldquo;facebook algorithm&amp;rdquo; is a large blob of software that Facebook uses to try to get people to stay on their website longer. It&amp;rsquo;s a complicated and expensive machine designed to extract user data and sell ads. All the social media &amp;ldquo;algorithms&amp;rdquo; boil down to that. Money making machines, based on a lot of loose guesses and elbow grease.&lt;/p&gt;
+&lt;p&gt;A broader meaning of &amp;ldquo;algorithm&amp;rdquo; is &amp;ldquo;detailed strategy to accomplish something.&amp;rdquo; There&amp;rsquo;s a whole field of study dedicated to analyzing such things mathematically (computer science), but you don&amp;rsquo;t have to learn math to study them. In fact, they abound in everyday life. Everybody&amp;rsquo;s got their own collection of algorithms. How do you crack your eggs, sort your books, tie your shoelaces?&lt;/p&gt;
+&lt;p&gt;I recently came across a particularly lovely everyday algorithm. &lt;a href=&#34;https://www.youtube.com/watch?v=Lq-Y7crQo44&#34;&gt;This youtube video&lt;/a&gt; gives the following strategy for untangling headphone wires:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Shake and pull gently.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You might not believe that this works, so here&amp;rsquo;s a video of me trying it:
+&lt;video width=&#34;320&#34; height=&#34;240&#34; controls async&gt;
+&lt;source src=&#34;assets/correct.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;Like magic, they unfurl.
+There is some care involved, though. If you pull too hard, you can knot them up worse:&lt;/p&gt;
+&lt;video width=&#34;320&#34; height=&#34;240&#34; controls async&gt;
+    &lt;source src=&#34;assets/pull.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p&gt;And if you shake without pulling, you won&amp;rsquo;t accomplish much:&lt;/p&gt;
+&lt;video width=&#34;320&#34; height=&#34;240&#34; controls async&gt;
+    &lt;source src=&#34;assets/shake.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p&gt;But when you do both at the same time, in the right ratio, it works surprisingly well. What&amp;rsquo;s going on here? How can such a simple approach yield such good results?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s study the ingredients. What does the pulling do? I would say that the pulling &lt;em&gt;encourages the system to stretch out&lt;/em&gt;. (By &amp;ldquo;system&amp;rdquo; I just mean &amp;ldquo;headphones&amp;rdquo;.)&lt;/p&gt;
+&lt;p&gt;What does this have to do with untangling? Well, tangles keep the system from stretching out fully. For the system to be as stretched out as you can get, you need to get rid of the tangles. But we can&amp;rsquo;t be too direct about it. Simply pulling on the wires knots them into a tight ball, and we get stuck.&lt;/p&gt;
+&lt;p&gt;How do we avoid getting knotted up? Shaking as we pull does something interesting. It encourages the system to explore more possibilities, by giving the wires motion and energy &amp;ndash; lives of their own. Lively wires are less inclined to get knotted up. I think of them as being &lt;em&gt;slipperier&lt;/em&gt; or &lt;em&gt;blurrier&lt;/em&gt;. In a thermodynamic sense, you could say that they&amp;rsquo;re &lt;em&gt;hotter&lt;/em&gt; &amp;ndash; that is, they have a lot of diffuse kinetic energy &amp;ndash; that is, they&amp;rsquo;re wiggling around.&lt;/p&gt;
+&lt;p&gt;Each second, each wiggling wire explores many different configurations. Where two motionless wires tend to get knotted up, two moving wires are more likely to find a configuration that allows them to slip past each other. This added flexibility allows the system to slip past sticking points, on its way to being fully stretched out.&lt;/p&gt;
+&lt;p&gt;Interesting enough. So what?&lt;/p&gt;
+&lt;p&gt;This idea &amp;ndash; gently pulling a system in some direction, while adding in random shaking or smoothing &amp;ndash; actually underlies many computer algorithms as well. That video I linked earlier does a great job of explaining this metaphor for one particular problem. But it&amp;rsquo;s actually really broadly applicable, and I wanted to riff on it a while.&lt;/p&gt;
+&lt;p&gt;In particular, it&amp;rsquo;s broadly applicable to algorithms that solve &amp;ldquo;hard&amp;rdquo; problems. What does &amp;ldquo;hard&amp;rdquo; mean? Computer science has many different mathematical models for studying and comparing computations &amp;ndash; asking questions like, &amp;ldquo;if you increase the amount of input data, how much more time do you need to solve it?&amp;rdquo; For easy problems, you don&amp;rsquo;t need much extra time; for hard problems, you need lots of extra time.&lt;/p&gt;
+&lt;p&gt;Some examples of easy problems are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sorting lists of numbers&lt;/li&gt;
+&lt;li&gt;Searching through sorted tables of data&lt;/li&gt;
+&lt;li&gt;Finding paths through road maps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some examples of hard problems are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Laying out circuits to minimize production costs&lt;/li&gt;
+&lt;li&gt;Training neural networks (&amp;ldquo;AIs&amp;rdquo;) to recognize images&lt;/li&gt;
+&lt;li&gt;Solving logic puzzles with thousands of variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ignoring the mathematical models, my rough rule of thumb is that &amp;ldquo;easy&amp;rdquo; problems generally take a fraction of a second on a modern computer, where &amp;ldquo;hard&amp;rdquo; problems take hours or days. But there are more differences than mere time and space.&lt;/p&gt;
+&lt;p&gt;See, you start your computer science degree with an Algorithms 101 class, which is about techniques for solving easy problems. These techniques have a generally &lt;em&gt;reductionist&lt;/em&gt; flavor. Given a problem, you break the problem into parts, solve each part separately, and then combine the solutions.&lt;/p&gt;
+&lt;p&gt;(&lt;a href=&#34;https://en.wikipedia.org/wiki/Merge_sort&#34;&gt;Merge sort&lt;/a&gt; comes to mind:
+&lt;img src=&#34;assets/mergesort.gif&#34; alt=&#34;merge sort diagram&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The basic idea is that you can combine two sorted lists of numbers by comparing the elements at the front and pulling off the smaller one. This gives you a sorted list of all the elements in both lists. This algorithm is called &amp;ldquo;merge&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;But if we start with an entirely unsorted list, how can we find sorted lists? Simple, break it into single elements, which are &amp;ldquo;sorted&amp;rdquo;, and then repeatedly apply &amp;ldquo;merge&amp;rdquo; to build up bigger and bigger runs of sorted numbers.)&lt;/p&gt;
+&lt;p&gt;I find understanding this sort of algorithm very satisfying. It gives me a feeling of power, like I&amp;rsquo;m designing a factory production line, and know precisely what each machine involved has to do.&lt;/p&gt;
+&lt;p&gt;But when you get out of algorithms 101, you quickly run into problems where this sort of approach isn&amp;rsquo;t possible. These problems are more than the sums of their parts &amp;ndash; different parts of the system interact with each other, and you can&amp;rsquo;t study them in isolation anymore.&lt;/p&gt;
+&lt;p&gt;For example, laying out circuits. For very complicated circuits like CPUs, engineers don&amp;rsquo;t typically start by designing a physical layout of the circuit. Instead, they just specify components and their connections by name; component A links to component B which links to component D, there is a batch of component E&amp;rsquo;s connected to each other in a daisy chain, etc. (This is usually done in a &lt;a href=&#34;https://en.wikipedia.org/wiki/Hardware_description_language&#34;&gt;hardware description language&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;The problem is to pick locations for components, and then connect them with wiring, while minimizing how much space the wiring takes up (since circuit space is expensive.) This is called &lt;a href=&#34;https://en.wikipedia.org/wiki/Place_and_route&#34;&gt;Place and Route&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But this sort of problem isn&amp;rsquo;t amenable to reductionist solutions. You can&amp;rsquo;t divide the circuit into chunks, lay them out in efficient ways indidually, and then link them together &amp;ndash; because the cross links take up space too, but you might not have left room for them! Maybe you bump some of your old links out of the way &amp;ndash; but oops, now they&amp;rsquo;re intruding on space that was used for something else! And so on.&lt;/p&gt;
+&lt;p&gt;You can&amp;rsquo;t solve the problem in parts; you have to solve it &lt;em&gt;all at once&lt;/em&gt;, because its parts are all tangled up. But how can we possibly do such a thing?&lt;/p&gt;
+&lt;p&gt;The answer, of course, is &amp;ldquo;shake and pull gently&amp;rdquo;. You start by making a very bad layout that takes up way, way more space than it needs; this is relatively easy to do. Then, you randomly wiggle the wires of your design, while pulling them tight to take up less space. You do this for a while, slowly decreasing your wiggling and increasing your pulling, and you stop when the circuit is small enough to satisfy you.&lt;/p&gt;
+&lt;p&gt;This algorithm is called &lt;a href=&#34;https://en.wikipedia.org/wiki/Simulated_annealing&#34;&gt;simulated annealing&lt;/a&gt;. Here&amp;rsquo;s a graphic of it; in this case it&amp;rsquo;s trying to find the shortest path through all the dots that goes through each dot exactly once:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;assets/TSPSA.gif&#34; alt=&#34;gif of traveling salesman problem being solved with simulated annealing&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You may notice that this example is not moving smoothly, like headphone wires, but instead is proceeding in discrete jumps. Simulated annealing for circuits is similar: Circuit wires are often constrained to be laid out on a grid, and can&amp;rsquo;t move smoothly. So instead, you apply small random jumps, moving bits of wire from one grid corner to another. This acts as &amp;ldquo;shaking&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Also, before you do any jump, you ask: will this improve or worsen the cost of the the chip? If the answer is &amp;ldquo;improve&amp;rdquo;, you do the jump; but if the answer is &amp;ldquo;worsen&amp;rdquo;, you don&amp;rsquo;t always reject it. Instead, you flip a coin. On heads, you do the jump anyway. That is, you sometimes accept &amp;ldquo;bad&amp;rdquo; random jumps, which make the chip more expensive.&lt;/p&gt;
+&lt;p&gt;This might seem counter-productive, but it&amp;rsquo;s how we implement &amp;ldquo;shake and pull gently&amp;rdquo; in a non-bendy setting. If you never accepted bad jumps, it would be like pulling your headphone without shaking: all the &amp;ldquo;good&amp;rdquo; jumps would quickly get applied. But then there might be many more improvements available, just not immediately.&lt;/p&gt;
+&lt;p&gt;Accepting bad random jumps encourages the system to explore many more possibilities. But we&amp;rsquo;re still weighting the dice, so to speak; good jumps are more likely to be applied than bad. So the system tends to drift in a good &amp;ndash; less expensive &amp;ndash; direction.&lt;/p&gt;
+&lt;p&gt;The algorithm is called &amp;ldquo;simulated annealing&amp;rdquo; because you typically start with a high bad-accept chance and then lower it over time. &amp;ldquo;Annealing&amp;rdquo; is a process where you heat slowly and cool metal to harden it. A high bad-accept chance is like a high temperature, because it induces more random motion; a low bad-accept chance is like a low temperature, because it doesn&amp;rsquo;t. By heating the system hot and slowly cooling it, you encourage it to loosen up and then slowly converge to a good solution.&lt;/p&gt;
+&lt;p&gt;You might notice that this is by no means guaranteed to actually work &amp;ndash; that is, find a solution you like. It could just get stuck, spit out something worse than you put into it. This is something I was very uncomfortable with when I started studying hard problems: if there&amp;rsquo;s no guarantee it&amp;rsquo;ll work, how can you trust your algorithm?&lt;/p&gt;
+&lt;p&gt;This is a general theme in hard problems. Solving them is less like designing a factory and more like baking: you have to know your ingredients well, and combine them correctly; but after a certain point, all you can do is wait and pray.&lt;/p&gt;
+&lt;p&gt;Broadly speaking, there are far too many possible solutions to check if any given answer is the absolute best answer. You can only compare your solution with other, &amp;ldquo;nearby&amp;rdquo; solutions (e.g. solutions a single jump away). So instead of asking, &amp;ldquo;is this the best possible answer?&amp;rdquo;, you simply ask, &amp;ldquo;is this answer good enough?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;And in fact, in practice, the answer often is good enough. This approach is used to lay out many of the hyper-complex computer chips we use every day. And, if you squint, you can see the bones of this algorithm in many other hard problems. I&amp;rsquo;ll run through a quick battery of examples. (I&amp;rsquo;m going to skimp on intuitive explanation here, because when I tried to explain each of these in detail it added a few thousand words to the article, and nobody has time for that&amp;hellip; I&amp;rsquo;ll probably come back and talk about deep neural networks more in a later post. They&amp;rsquo;re near and dear to my heart, like a clogged artery.)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deep neural networks, trained to imitate a dataset with &lt;a href=&#34;https://en.wikipedia.org/wiki/Stochastic_gradient_descent&#34;&gt;stochastic gradient descent&lt;/a&gt;: &amp;ldquo;gradient descent&amp;rdquo; involves &amp;ldquo;pulling&amp;rdquo; on the tuning parameters of a statistical model to make them approximate some dataset. &amp;ldquo;Stochastic&amp;rdquo; gradient descent involves randomly sampling sub-chunks of the dataset to approximate at a time. This random sampling acts like &amp;ldquo;shaking&amp;rdquo;, and the gradient descent part acts like &amp;ldquo;pulling&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Genetic algorithms: often used to explain deep neural networks, although they aren&amp;rsquo;t  actually used much anymore. But the analogy is close enough: genetic algorithms are like a slightly more complex version of simulated annealing, with a population of candidate solutions being randomly mutated instead of just a single one. (You could argue that biological evolution is a &amp;ldquo;shake and pull gently&amp;rdquo; algorithm, but I&amp;rsquo;m not sure I&amp;rsquo;d agree; biological evolution doesn&amp;rsquo;t actually have a goal, it&amp;rsquo;s just that whatever reproduces, reproduces, and whatever doesn&amp;rsquo;t, doesn&amp;rsquo;t&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;SAT / SMT solvers: Maybe calling backtracking search &amp;ldquo;shake and pull gently&amp;rdquo; is pushing it, since there isn&amp;rsquo;t any explicit randomness involved, but I think the analogy still works; you just have to view exhaustive search as a generalized form of random sampling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(Actually you can &lt;a href=&#34;https://arxiv.org/abs/2109.14119&#34;&gt;do without random sampling&lt;/a&gt; in neural networks as well, but you have to add in other ingredients that approximate its smoothing effects. So what matters more than the random shaking &lt;em&gt;itself&lt;/em&gt; is how the random shaking smooths and simplifies the problem. You could call it a &amp;ldquo;good rule of thumb for making the problem more regular&amp;rdquo;; machine learning experts call such things &amp;ldquo;regularization heuristics&amp;rdquo;, because if you don&amp;rsquo;t use long words you can&amp;rsquo;t get research funding.)&lt;/p&gt;
+&lt;p&gt;By the way, a &amp;ldquo;greedy algorithm&amp;rdquo; is just an algorithm that blindly makes small improvements to a solution without thinking very hard about them. The byline of this post was &amp;ldquo;regularized greedy algorithms and their applications&amp;rdquo;; now we can say what a &amp;ldquo;regularized greedy algorithm&amp;rdquo; actually is. It&amp;rsquo;s an &amp;ldquo;algorithm that blindly moves in a direction while trying not to get stuck.&amp;rdquo; Or, more simply, &amp;ldquo;pull and shake gently&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Stated so bluntly, maybe it&amp;rsquo;s obvious why such things have broad applications. Did this really deserve a whole 2000-word post? Well, here we are.&lt;/p&gt;
+&lt;p&gt;I hope this helps demystify &amp;ldquo;algorithms&amp;rdquo;; whenever you see a headline about &amp;ldquo;algorithms&amp;rdquo;, there&amp;rsquo;s a good chance it boils down to &amp;ldquo;shake and pull gently&amp;rdquo;. It may be worth questioning whether we should trust &amp;ldquo;shake and pull gently&amp;rdquo; to select what news stories we read, whether we receive home lones, or whether we are drone striked as a terrorists. Especially when the &amp;ldquo;pull gently&amp;rdquo; part of the algorithm is attempting to optimize the profits of Facebook, Wells Fargo, or Raytheon, respectively.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://kazimuth.github.io/blog/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kazimuth.github.io/blog/about/</guid>
+      
+      <description>&lt;p&gt;i am computer man&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>
