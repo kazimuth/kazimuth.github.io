@@ -175,3 +175,9 @@ time {
 #footer > .footnote {
     text-align: center;
 }
+
+.centerer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

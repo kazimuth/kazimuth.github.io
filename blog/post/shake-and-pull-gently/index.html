@@ -40,7 +40,6 @@ The &ldquo;facebook algorithm&rdquo; is a large blob of software that Facebook u
 <meta property="article:modified_time" content="2022-07-01T18:14:54-04:00" />
 
 
-
   
   <link rel="canonical" href="https://kazimuth.github.io/blog/post/shake-and-pull-gently/">
 
@@ -52,7 +51,7 @@ James Gilles
 &ldquo;Algorithm&rdquo; is one of those words that sounds fancier than it really deserves. We hear all the time about the &ldquo;facebook algorithm&rdquo;, the &ldquo;youtube algorithm&rdquo;, &ldquo;high frequency trading algorithms&rdquo;, &ldquo;artificial intelligence algorithms&rdquo;, and so on. What are these, really?
 The &ldquo;facebook algorithm&rdquo; is a large blob of software that Facebook uses to try to get people to stay on their website longer."><meta itemprop="datePublished" content="2022-07-01T18:14:54-04:00" />
 <meta itemprop="dateModified" content="2022-07-01T18:14:54-04:00" />
-<meta itemprop="wordCount" content="2384">
+<meta itemprop="wordCount" content="2397">
 <meta itemprop="keywords" content="" />
 
   
@@ -113,21 +112,28 @@ The &ldquo;facebook algorithm&rdquo; is a large blob of software that Facebook u
 <p>The &ldquo;facebook algorithm&rdquo; is a large blob of software that Facebook uses to try to get people to stay on their website longer. It&rsquo;s a complicated and expensive machine designed to extract user data and sell ads. All the social media &ldquo;algorithms&rdquo; boil down to that. Money making machines, based on a lot of loose guesses and elbow grease.</p>
 <p>A broader meaning of &ldquo;algorithm&rdquo; is &ldquo;detailed strategy to accomplish something.&rdquo; There&rsquo;s a whole field of study dedicated to analyzing such things mathematically (computer science), but you don&rsquo;t have to learn math to study them. In fact, they abound in everyday life. Everybody&rsquo;s got their own collection of algorithms. How do you crack your eggs, sort your books, tie your shoelaces?</p>
 <p>I recently came across a particularly lovely everyday algorithm. <a href="https://www.youtube.com/watch?v=Lq-Y7crQo44">This youtube video</a> gives the following strategy for untangling headphone wires:</p>
-<pre><code>Shake and pull gently.
-</code></pre>
-<p>You might not believe that this works, so here&rsquo;s a video of me trying it:
-<video width="320" height="240" controls async>
-<source src="assets/correct.mp4" type="video/mp4">
-</video></p>
+<div class="centerer">
+    Shake and pull gently.
+</div>
+<p>You might not believe that this works, so here&rsquo;s a video of me trying it:</p>
+<div class="centerer">
+    <video width="320" height="240" controls async>
+        <source src="assets/correct.mp4" type="video/mp4">
+    </video>
+</div>
 <p>Like magic, they unfurl.
 There is some care involved, though. If you pull too hard, you can knot them up worse:</p>
-<video width="320" height="240" controls async>
-    <source src="assets/pull.mp4" type="video/mp4">
-</video>
+<div class="centerer">
+    <video width="320" height="240" controls async>
+        <source src="assets/pull.mp4" type="video/mp4">
+    </video>
+</div>
 <p>And if you shake without pulling, you won&rsquo;t accomplish much:</p>
-<video width="320" height="240" controls async>
-    <source src="assets/shake.mp4" type="video/mp4">
-</video>
+<div class="centerer">
+    <video width="320" height="240" controls async>
+        <source src="assets/shake.mp4" type="video/mp4">
+    </video>
+</div>
 <p>But when you do both at the same time, in the right ratio, it works surprisingly well. What&rsquo;s going on here? How can such a simple approach yield such good results?</p>
 <p>Let&rsquo;s study the ingredients. What does the pulling do? I would say that the pulling <em>encourages the system to stretch out</em>. (By &ldquo;system&rdquo; I just mean &ldquo;headphones&rdquo;.)</p>
 <p>What does this have to do with untangling? Well, tangles keep the system from stretching out fully. For the system to be as stretched out as you can get, you need to get rid of the tangles. But we can&rsquo;t be too direct about it. Simply pulling on the wires knots them into a tight ball, and we get stuck.</p>
@@ -150,8 +156,10 @@ There is some care involved, though. If you pull too hard, you can knot them up 
 </ul>
 <p>Ignoring the mathematical models, my rough rule of thumb is that &ldquo;easy&rdquo; problems generally take a fraction of a second on a modern computer, where &ldquo;hard&rdquo; problems take hours or days. But there are more differences than mere time and space.</p>
 <p>See, you start your computer science degree with an Algorithms 101 class, which is about techniques for solving easy problems. These techniques have a generally <em>reductionist</em> flavor. Given a problem, you break the problem into parts, solve each part separately, and then combine the solutions.</p>
-<p>(<a href="https://en.wikipedia.org/wiki/Merge_sort">Merge sort</a> comes to mind:
-<img src="assets/mergesort.gif" alt="merge sort diagram"></p>
+<div class="centerer">
+([Merge sort](https://en.wikipedia.org/wiki/Merge_sort) comes to mind:
+![merge sort diagram](assets/mergesort.gif)
+</div>
 <p>The basic idea is that you can combine two sorted lists of numbers by comparing the elements at the front and pulling off the smaller one. This gives you a sorted list of all the elements in both lists. This algorithm is called &ldquo;merge&rdquo;.</p>
 <p>But if we start with an entirely unsorted list, how can we find sorted lists? Simple, break it into single elements, which are &ldquo;sorted&rdquo;, and then repeatedly apply &ldquo;merge&rdquo; to build up bigger and bigger runs of sorted numbers.)</p>
 <p>I find understanding this sort of algorithm very satisfying. It gives me a feeling of power, like I&rsquo;m designing a factory production line, and know precisely what each machine involved has to do.</p>
@@ -161,8 +169,10 @@ There is some care involved, though. If you pull too hard, you can knot them up 
 <p>But this sort of problem isn&rsquo;t amenable to reductionist solutions. You can&rsquo;t divide the circuit into chunks, lay them out in efficient ways indidually, and then link them together &ndash; because the cross links take up space too, but you might not have left room for them! Maybe you bump some of your old links out of the way &ndash; but oops, now they&rsquo;re intruding on space that was used for something else! And so on.</p>
 <p>You can&rsquo;t solve the problem in parts; you have to solve it <em>all at once</em>, because its parts are all tangled up. But how can we possibly do such a thing?</p>
 <p>The answer, of course, is &ldquo;shake and pull gently&rdquo;. You start by making a very bad layout that takes up way, way more space than it needs; this is relatively easy to do. Then, you randomly wiggle the wires of your design, while pulling them tight to take up less space. You do this for a while, slowly decreasing your wiggling and increasing your pulling, and you stop when the circuit is small enough to satisfy you.</p>
-<p>This algorithm is called <a href="https://en.wikipedia.org/wiki/Simulated_annealing">simulated annealing</a>. Here&rsquo;s a graphic of it; in this case it&rsquo;s trying to find the shortest path through all the dots that goes through each dot exactly once:</p>
-<p><img src="assets/TSPSA.gif" alt="gif of traveling salesman problem being solved with simulated annealing"></p>
+<p>This algorithm is called <a href="https://en.wikipedia.org/wiki/Simulated_annealing">simulated annealing</a>. Here&rsquo;s a graphic of it; in this case it&rsquo;s trying to find the shortest path through all the dots that goes through each dot exactly once:'</p>
+<div class="centerer">
+![gif of traveling salesman problem being solved with simulated annealing](assets/TSPSA.gif)
+</div>
 <p>You may notice that this example is not moving smoothly, like headphone wires, but instead is proceeding in discrete jumps. Simulated annealing for circuits is similar: Circuit wires are often constrained to be laid out on a grid, and can&rsquo;t move smoothly. So instead, you apply small random jumps, moving bits of wire from one grid corner to another. This acts as &ldquo;shaking&rdquo;.</p>
 <p>Also, before you do any jump, you ask: will this improve or worsen the cost of the the chip? If the answer is &ldquo;improve&rdquo;, you do the jump; but if the answer is &ldquo;worsen&rdquo;, you don&rsquo;t always reject it. Instead, you flip a coin. On heads, you do the jump anyway. That is, you sometimes accept &ldquo;bad&rdquo; random jumps, which make the chip more expensive.</p>
 <p>This might seem counter-productive, but it&rsquo;s how we implement &ldquo;shake and pull gently&rdquo; in a non-bendy setting. If you never accepted bad jumps, it would be like pulling your headphone without shaking: all the &ldquo;good&rdquo; jumps would quickly get applied. But then there might be many more improvements available, just not immediately.</p>
@@ -210,7 +220,7 @@ There is some care involved, though. If you pull too hard, you can knot them up 
 
     <footer id="footer">
   <div>
-    <span>© 2022</span> - <span>2022</span>
+    <span>© 2022</span> - <span>2023</span>
   </div>
 
   <div>
