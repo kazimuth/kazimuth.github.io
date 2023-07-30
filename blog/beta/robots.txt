@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://kazimuth.github.io/blog/beta/sitemap.xml

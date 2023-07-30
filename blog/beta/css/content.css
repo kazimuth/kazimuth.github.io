@@ -1,0 +1,185 @@
+html {
+    /*box-sizing: border-box;*/
+    width: 90%;
+    margin: 2em auto;
+}
+
+.content .MathJax {
+    font-size: 100% !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.content .katex {
+    font-size: 100% !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.content :last-child {
+    margin-bottom: 0;
+}
+
+.content a {
+    color: #AA0000;
+    text-decoration: underline;
+}
+
+.content a.footnote-ref::before {
+    content: "[";
+}
+
+.content a.footnote-ref::after {
+    content: "]";
+}
+
+div.centerer {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.content h2 {
+    padding-top: 0.3rem;
+}
+
+.content blockquote,
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.content p,
+.content pre,
+.content ol,
+.content table,
+.content ul {
+    /*margin-bottom: 1rem;*/
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #FAFAFA;
+}
+
+
+.content {
+    /* background-color: #FAFAFA; */
+}
+
+.content blockquote {
+    border-left: black 2px solid;
+    font-style: italic;
+    padding: 1rem 0 1rem 2rem;
+}
+
+.content code {
+    background-color: #F5F5F5;
+    border-radius: .2rem;
+    color: #AA0000;
+    font-family: Courier, monospace;
+    padding: 0 .2rem;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    line-height: 1.5;
+    margin-top: 1rem;
+}
+
+.content h1 {
+    font-size: 2.4rem;
+}
+
+.content h2 {
+    font-size: 1.8rem;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+}
+
+.content h4 {
+    font-size: 1.4rem;
+}
+
+.content h5 {
+    font-size: 1.3rem;
+}
+
+.content h6 {
+    font-size: 1.2rem;
+}
+
+.content img {
+    max-width: 100%;
+}
+
+.content p {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.content pre {
+    background-color: #F5F5F5 !important;
+    border-radius: .2rem;
+    font-family: 'andale mono', Courier, monospace;
+    margin-top: .5rem;
+    overflow-x: auto;
+    padding: .5rem;
+}
+
+.content pre code {
+    padding: 0;
+}
+
+.content strong.chinese {
+    font-weight: normal;
+    text-emphasis-style: dot;
+    text-emphasis-position: under;
+    -webkit-text-emphasis-style: dot;
+    -webkit-text-emphasis-position: under;
+}
+
+.content table {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.content td,
+.content th {
+    border: #a3acb4 1px solid;
+    padding: .1rem .5rem;
+}
+
+.content th {
+    background-color: #575C61;
+    color: #FAFAFA;
+}
+
+.content ol,
+.content ul {
+    /*margin-left: 1.5rem;*/
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+}
+
+table.diagramtable {
+    font-family: Helvetica, sans-serif
+}
+
+.content th.left {
+    background-color: #666666;
+}
+
+.content th.right {
+    background-color: #000070;
+}

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+  <meta name="author" content="James Gilles">
+
+  
+  
+  <meta name="description" content="Introduction The universe is not veiled; all its activities lie open. — 圓悟克勤 Many people seem to think that math is boring, unpleasant, and difficult to understand. These people are right; but I wish they weren&rsquo;t. It&rsquo;s important to understand that math is basically just a pen-and-paper board game, like dungeons and dragons. The rules of math are carefully designed to simulate the real world. It&rsquo;s not">
+  
+
+  
+  <link rel="icon" href="https://kazimuth.github.io/blog/beta/favicon.ico">
+
+  
+  
+  <meta name="keywords" content=" i_hate_seo ">
+  
+
+  
+  
+
+  
+  <meta property="og:title" content="Visualizing Functions and Relations" />
+<meta property="og:description" content="Introduction The universe is not veiled; all its activities lie open. — 圓悟克勤 Many people seem to think that math is boring, unpleasant, and difficult to understand. These people are right; but I wish they weren&rsquo;t. It&rsquo;s important to understand that math is basically just a pen-and-paper board game, like dungeons and dragons. The rules of math are carefully designed to simulate the real world. It&rsquo;s not" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kazimuth.github.io/blog/beta/post/functions-and-relations/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-07-24T18:14:54-04:00" />
+<meta property="article:modified_time" content="2023-07-24T18:14:54-04:00" />
+
+
+  
+  <link rel="canonical" href="https://kazimuth.github.io/blog/beta/post/functions-and-relations/">
+
+  
+  
+  <meta itemprop="name" content="Visualizing Functions and Relations">
+<meta itemprop="description" content="Introduction The universe is not veiled; all its activities lie open. — 圓悟克勤 Many people seem to think that math is boring, unpleasant, and difficult to understand. These people are right; but I wish they weren&rsquo;t. It&rsquo;s important to understand that math is basically just a pen-and-paper board game, like dungeons and dragons. The rules of math are carefully designed to simulate the real world. It&rsquo;s not"><meta itemprop="datePublished" content="2023-07-24T18:14:54-04:00" />
+<meta itemprop="dateModified" content="2023-07-24T18:14:54-04:00" />
+<meta itemprop="wordCount" content="4235">
+<meta itemprop="keywords" content="" />
+
+  
+  <link media="screen" rel="stylesheet" href='https://kazimuth.github.io/blog/beta/css/common.css'>
+  <link media="screen" rel="stylesheet" href='https://kazimuth.github.io/blog/beta/css/content.css'>
+
+  
+  
+  <title>Visualizing Functions and Relations - james&#39;s web log</title>
+  
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Visualizing Functions and Relations"/>
+<meta name="twitter:description" content="Introduction The universe is not veiled; all its activities lie open. — 圓悟克勤 Many people seem to think that math is boring, unpleasant, and difficult to understand. These people are right; but I wish they weren&rsquo;t. It&rsquo;s important to understand that math is basically just a pen-and-paper board game, like dungeons and dragons. The rules of math are carefully designed to simulate the real world. It&rsquo;s not"/>
+
+
+  
+<link rel="stylesheet" href='https://kazimuth.github.io/blog/beta/css/single.css'>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header id="header">
+  <h1>
+    <a href="https://kazimuth.github.io/blog/beta/">james&#39;s web log</a>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/blog/beta/post/">Posts</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/blog/beta/about/">About</a>
+    </span>
+    
+  </nav>
+</header>
+
+    
+<main id="main" class="post">
+  
+  
+  <h1>Visualizing Functions and Relations</h1>
+  
+  
+  <article class="content">
+    
+    <h2 id="introduction">Introduction</h2>
+<blockquote>
+<p>The universe is not veiled; all its activities lie open.</p>
+<p>  — <a href="https://en.wikipedia.org/wiki/Yuanwu_Keqin">圓悟克勤</a></p>
+</blockquote>
+<p>Many people seem to think that math is boring, unpleasant, and difficult to understand. These people are right; but I wish they weren&rsquo;t.</p>
+<p>It&rsquo;s important to understand that math is <em>basically</em> just a pen-and-paper board game, like dungeons and dragons. The rules of math are carefully designed to simulate the real world. It&rsquo;s not magic.</p>
+<p>But math isn&rsquo;t taught this way. It&rsquo;s taught as an strict and arcane collection of rules that have to be memorized, on pain of bad test scores. Not much time is spent helping students understand <em>why</em> we choose these rules. Various people have made the case that this is not a good way to operate (<a href="https://betterexplained.com/about/">[1]</a> <a href="https://graphicallinearalgebra.net/">[2]</a> <a href="https://www.youtube.com/@3blue1brown?app=desktop">[3]</a> <a href="https://www.youtube.com/@Vihart/videos">[4]</a> <a href="https://www.youtube.com/watch?v=jvPPXbo87ds">[5]</a>). There&rsquo;s a growing wave of math resources focusing on intuitive, sensory engagement with math.</p>
+<p>I think resources like this are especially needed for modern pure mathematics. For about a century, the style in professional math has been:</p>
+<ul>
+<li>no pictures in publications (you&rsquo;re allowed to draw them for your friends <a href="?">cite</a> but publishing them isn&rsquo;t allowed)</li>
+<li>all notation as concise and abstract as possible</li>
+<li>use as many fancy tricks to describe your problem as you can think of</li>
+<li>leave as much unsaid as possible</li>
+</ul>
+<p>This makes pure math seem much scarier than it really is.</p>
+<p>This post is about two important pure-mathematical tools: functions and relations. These are extremely important pieces in the board game of modern math. We&rsquo;ll see different ways to understand and visualize them, go through some of the properties they can have, and find out the special moves that these properties unlock.</p>
+<p>We&rsquo;ll be mixing pictures, classic math notation, and modern <em>formal diagrams</em>. These are pictures that act as board game pieces, with rules for how you&rsquo;re allowed to combine and modify them.</p>
+<p>The goal of this post is to understand the following sentence:</p>
+<div class="centerer">
+<p><b>A function is an input-total relation that preserves equality.</b></p>
+</div>
+<p>By &ldquo;understand&rdquo;, I mean both to get an intuitive understanding of what it means, and to know how to <em>prove</em> it &ndash; how to use it as a strategy in the game of formal math, if a pro mathematician challenges you to a duel.</p>
+<p>Let&rsquo;s begin.</p>
+<h2 id="whats-a-relation">What&rsquo;s a relation?</h2>
+<p>First, we need to define our playing pieces. The most basic piece we&rsquo;ll use is called a <em>binary relation</em>. Before we start writing out equations and strict mathematical rules, let&rsquo;s try to get a general sense of what a binary relation looks like. There are actually multiple ways to draw them, but they&rsquo;re all connected.</p>
+<h3 id="diagram-type-one-directed-graphs">Diagram type one: Directed Graphs</h3>
+<p>My favorite explanation is that a binary relation is a <em>directed graph</em>, or <em>digraph</em>, which looks like this:</p>
+<!-- SCALE: drawio 1in -> 108pt --> 
+<div class="centerer">
+<img alt="Circles labeled 1,2,3,4. There are arrows going 1 to 2, 1 to 3, 3 to 4, 4 to 1" src="assets/R_Graph1.svg" width="324pt" height="324pt">
+</div>
+<p>A digraph is a collection of <em>nodes</em> &ndash; labeled circles &ndash; and a collection of <em>edges</em> &ndash; little arrows going between the nodes. We can model all sorts of situations with digraph. For instance, a family tree can be represented as a digraph:</p>
+<div class="centerer">
+<img alt="Circles labeled Cindy,Felix,Ray,Eileen,Rob,Louise,Jim,Mac. There are arrows going Cindy to Rob, Felix to Rob, Ray to Louise, Eileen to Louise, Rob to Jim, Rob to Mac, Louise to Jim, Louise to Mac" src="assets/Family_Digraph_1.svg" width="432pt" height="540pt">
+</div>
+<p>Here, the nodes are names, and we draw edges from parents to children.
+We can also draw graphs of love triangles:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Love Triangles.drawio.svg" width="756pt" height="540pt">
+</div>
+<p>Notice that nodes are allowed to have edges to themselves. Also, nodes don&rsquo;t have to have any edges, like in the &ldquo;Romantic Comedy&rdquo; example, where C is a sidekick who is not romantically interested in A or B.</p>
+<p>We can also draw a digraph of which classes use which books in a school:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Classes_Regular_Arrows.drawio.svg" width="648pt" height="440pt">
+</div>
+<p>Notice how this graph is divided into two parts &ndash; the classes and the books. Also, all the edges go from classes to books. Graphs like this are called &ldquo;bipartite&rdquo; (which means &ldquo;two parts&rdquo;).</p>
+<p>This kind of digraph is particularly easy to convert to our next kind of diagram: a two-column table.</p>
+<h3 id="diagram-type-two-two-column-tables">Diagram Type Two: Two-Column Tables</h3>
+<p>Here is the Classes-Books relation, redrawn as a two-column table.</p>
+<div class="centerer">
+    <table class="diagramtable">
+        <thead>
+            <tr><th class="left">Class</th><th class="right">Book</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>English Lit 101</td><td>Hamlet</td></tr>
+            <tr><td>English Lit 101</td><td>Moby Dick</td></tr>
+            <tr><td>Whaling 101</td><td>Moby Dick</td></tr>
+            <tr><td>Math 203</td><td>The Calculus Reader</td></tr>
+            <tr><td>Astronomy 101</td><td>The Planetary System</td></tr>
+        </tbody>
+    </table>
+</div>
+<p>This is less exciting, but more orderly.</p>
+<p>Relations can be named with a letter, like &ldquo;R&rdquo;, or a symbol, like &ldquo;=&rdquo; or &ldquo;&lt;&rdquo;. I always write quotes around a symbol to indicate I&rsquo;m talking about it as <em>just a symbol</em> rather than a variable or something.</p>
+<p>We can also draw relations in a different kind of table, which I will call a &ldquo;2-d plot&rdquo;:</p>
+<p>[R_2d_plot]</p>
+<p>(This might remind you of the way we learned to draw functions in middle school:
+[function_example]
+but for this post, we&rsquo;re always going to be working with <em>discrete</em> mathematical objects &ndash; basically, objects made of big separate chunks, not smooth shapes.</p>
+<p>It&rsquo;s pretty easy to take something smooth and convert it to something discrete, using a grid:
+[function_discretized]
+This is how digital cameras work, for instance.)</p>
+<p>(Other Note: relations are more general than functions! for instance, they can go vertically:</p>
+<p>we&rsquo;ll talk a lot about that soon. But I haven&rsquo;t defined a function yet, so forget this for now.
+)</p>
+<p>It&rsquo;s sort of like a multiplication table, but in each box, we only mark a single piece of information: whether that edge is in the relation, or not.</p>
+<p>An important thing to keep in mind about relations is that <em>only the connectivity of a relation matters</em>. We don&rsquo;t care if the nodes have been rearranged, as long as the connections between them are the same. For instance, we consider all of the following relations to be the same:</p>
+<p>[R_rearranging_digraph]</p>
+<p>Two say that we consider two different things to be &ldquo;the same enough for our purposes&rdquo;, we will write an equals sign between them:</p>
+<p>[R_rearranging_digraph_equals]</p>
+<p>&ldquo;=&rdquo; is a relation that you may have seen before. There are some traditional rules associated with it, which we&rsquo;ll go over in a bit.</p>
+<p>(You might notice that in this case, &ldquo;=&rdquo; is a relation that is <em>going between relations</em> &ndash; its nodes are themselves entire relations. This is allowed, but it gets confusing very quickly, so we&rsquo;re not going to emphasize it much. It&rsquo;s might be easier to think of &ldquo;=&rdquo; as being just a special symbol with its own rules attached.)</p>
+<p>Similarly to the rule for directed graphs, we can declare that the order of rows in a table don&rsquo;t matter:</p>
+<p>[R_rearranging_tables]</p>
+<p>And similarly, the order of rows and columns in a 2-d plot don&rsquo;t matter:</p>
+<p>[R_rearranging_plots]</p>
+<p>(This means you can put the numbers out of order on the sides of your plots. This is upsetting, but there&rsquo;s no rule against it.)</p>
+<p>We consider tables, plots, and digraphs depicting a relation to be the same:</p>
+<p>[R_digraph_eq_plot_eq_]</p>
+<p>Another, subtler rule is that the nodes available on each side of a relation matter, even if no edge touches them. For instance, we consider these two relations to be DIFFERENT:</p>
+<p>[R_S_digraph_neq]</p>
+<p>The symbol &ldquo;$\neq$&rdquo; is read &ldquo;does not equal&rdquo;. These two relations are not equal, even though they have the same edges, there are some extra nodes available on the right side. Keeping track of this information is why we always write the available nodes in the column headers:</p>
+<p>[R_S_table_neq_emph_available]</p>
+<p>We can also write short descriptions, like &ldquo;x: 1..10&rdquo; if every entry in the column &ldquo;x&rdquo; comes from the collection of nodes {1,2,3,4,5,6,7,8,9,10}.</p>
+<p>This information is basically just mathematical bookkeeping, but in one case, it unlocks a special drawing technique. If the nodes on the left and the right sides of a relation are exactly the same, then instead of drawing it like this (&quot;<em>bipartite</em>&quot;):</p>
+<p>[U_digraph_bipartite]</p>
+<p>We can draw it like this:</p>
+<p>[U_digraph_unipartite]</p>
+<p>Where we&rsquo;ve overlaid the nodes on the left and right half of the diagram. This kind of drawing often reveals interesting structure in a relation:</p>
+<p>[eq_le_bipartite_to_uni_digraph]</p>
+<p>More generally, if a node is repeated on one side of a digraph, we consider that the same as if the two copies of the node were glued together:</p>
+<p>[identification]</p>
+<p>This lets us give a nice explanation of how to convert between tables and digraphs:</p>
+<p>[digraph_to_table]</p>
+<p>A final point is that repeated edges count as a single edge:</p>
+<p>[digraph_repeated]</p>
+<p>Just like how repeated nodes count as a single node.</p>
+<h2 id="describing-relations">Describing relations</h2>
+<p>So far, what we&rsquo;ve been doing doesn&rsquo;t look much like traditional math. It&rsquo;s all pictures! Isn&rsquo;t math supposed to have equations and stuff?</p>
+<p>The answer is: actually, it&rsquo;s fine for math to be made of pictures. The original Greek mathematicians drew lots of pictures! But sometime around the late 1800s, pictures started to be considered <em>informal</em>. Only math made of ordered sequences of symbols counted as &ldquo;real math&rdquo;. There&rsquo;s a modern movement to get rid of this requirement though, called <em>diagrammatic mathematics</em>. I love diagrammatic mathematics.</p>
+<p>But it&rsquo;s still useful to be able to make math out of symbols in a line. For one thing, it lets you explain things to mathematicians that prefer things that way. Also, computer memory is basically a sequence of boxes with symbols in them, and it&rsquo;s useful to learn how to squish things so that they fit in that shape.</p>
+<p>To write a relation in a line, we can write it as a sequence of <em>ordered pairs</em> (a, b) between brackets:</p>
+<pre><code>R = {(1, &quot;a&quot;), (2, &quot;b&quot;), (2, &quot;c&quot;), (3, &quot;c&quot;)}
+</code></pre>
+<p>Alternatively, we can write it as a collection of labeled pairs (x: a, y: b):</p>
+<pre><code>R = {(x: 1, y: &quot;a&quot;), (x: 2, y: &quot;b&quot;), (x: 2, y: &quot;c&quot;), (x: 3, y: &quot;c&quot;)}
+</code></pre>
+<p>Labeled pairs take up more space, which is probably why they&rsquo;re rarely used in traditional mathematics texts. They&rsquo;re common in the database literature though.</p>
+<p>Rather than describing the hold relations</p>
+<p>&hellip;.</p>
+<p>I had a thought but I lost it&hellip;</p>
+<p>Ah: the rule that equal things can be overlapped as if they were the same object is a primordial mathematical rule called the <em>substitution property of equality</em>. Or, &ldquo;like can be substituted for like&rdquo;.</p>
+<p>&hellip;.</p>
+<p>We can also do a dirty trick and avoid defining</p>
+<p>This corre</p>
+<p>&hellip;.</p>
+<h3 id="todospoiler_somehow-read-if-you-are-familiar-with-the-rules-of-formal-math-andor-programming">TODO:SPOILER_SOMEHOW Read if you are familiar with the rules of formal math and/or programming:</h3>
+<p>To describe our relation &ldquo;R&rdquo; using ordered symbols, we can write something like the following:</p>
+<blockquote>
+<p>R is a labeled binary relation on the types 1..3 and &ldquo;a&rdquo;..&ldquo;c&rdquo; such that:</p>
+<ul>
+<li>(x: 1, y: &ldquo;a&rdquo;) is in R</li>
+<li>(x: 2, y: &ldquo;b&rdquo;) is in R</li>
+<li>(x: 2, y: &ldquo;c&rdquo;) is in R</li>
+<li>(x: 3, y: &ldquo;c&rdquo;) is in R</li>
+<li>no other records are in R</li>
+</ul>
+</blockquote>
+<p>Note: a &ldquo;type&rdquo; is a mathematical description of the forms a variable can take, and a &ldquo;record&rdquo; is the mathematical equivalent of a form with filled-in boxes:</p>
+<p>[record, form]</p>
+<p>We can write this more compactly:</p>
+<blockquote>
+<p>&ldquo;R: Set[(x: 1..3, y: &ldquo;a&rdquo;..&ldquo;c&rdquo;)] = {
+(1, &ldquo;a&rdquo;),
+(2, &ldquo;b&rdquo;),
+(2, &ldquo;c&rdquo;),
+(3, &ldquo;c&rdquo;)
+}&rdquo;</p>
+</blockquote>
+<p>A &ldquo;Set&rdquo; is a collection of objects in no particular order. A Set[(x: )]</p>
+<p>For programmers, we can translate this fairly literally to the programming language Python. If you&rsquo;re not a programmer, ignore the following.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">dataclasses</span> <span style="color:#a2f;font-weight:bold">import</span> dataclass
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">typing</span> <span style="color:#a2f;font-weight:bold">import</span> Union, Literal, Set
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OneToThree <span style="color:#666">=</span> Union[Literal[<span style="color:#666">1</span>], Literal[<span style="color:#666">2</span>], Literal[<span style="color:#666">3</span>]]
+</span></span><span style="display:flex;"><span>AToC <span style="color:#666">=</span> Union[Literal[<span style="color:#b44">&#34;a&#34;</span>], Literal[<span style="color:#b44">&#34;b&#34;</span>], Literal[<span style="color:#b44">&#34;c&#34;</span>]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f">@dataclass</span>(frozen<span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">XY</span>:
+</span></span><span style="display:flex;"><span>    x: OneToThree
+</span></span><span style="display:flex;"><span>    y: AToC
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>R: Set[XY] <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>    XY(x<span style="color:#666">=</span><span style="color:#666">1</span>, y<span style="color:#666">=</span><span style="color:#b44">&#34;a&#34;</span>),
+</span></span><span style="display:flex;"><span>    XY(x<span style="color:#666">=</span><span style="color:#666">2</span>, y<span style="color:#666">=</span><span style="color:#b44">&#34;b&#34;</span>),
+</span></span><span style="display:flex;"><span>    XY(x<span style="color:#666">=</span><span style="color:#666">2</span>, y<span style="color:#666">=</span><span style="color:#b44">&#34;c&#34;</span>),
+</span></span><span style="display:flex;"><span>    XY(x<span style="color:#666">=</span><span style="color:#666">3</span>, y<span style="color:#666">=</span><span style="color:#b44">&#34;c&#34;</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a2f">print</span>(R)
+</span></span></code></pre></div><p>And then if we run this script, the computer will politely print out a one-line representation of R.</p>
+<h2 id="defining-relations-by-rules">Defining relations by rules</h2>
+<p>You may remember equations like this from middle school:</p>
+<pre><code>$$y = f(x)$$
+</code></pre>
+<p>Often accompanied by graphs like this:</p>
+<pre><code>[graph1]
+</code></pre>
+<p>In that equation, $f$ is called a function, and $=$ is called a relation.</p>
+<p>Functions are often explained as a type of machine that eats inputs and produces outputs:</p>
+<pre><code>[machine1]
+</code></pre>
+<p>We imagine the lines in this diagram as wires along which numbers can flow. The idea is, if you put the number 3, say, into the input wire, the machine will churn for a bit, and then spit out another number on the output wire, like 6.</p>
+<pre><code>[machine1_churning]
+</code></pre>
+<p>We give this number a new name, $f(3)$, and write $f(3) = 7$ to indicate that the machine $f$ always outputs $7$ when you feed it $3$.</p>
+<p>It&rsquo;ll be helpful for our purposes to focus on functions that go between discrete collections of objects, like whole numbers, rather than continuous ranges of objects, like the number line:</p>
+<pre><code>[number_plot1]
+</code></pre>
+<p>We can also use other things besides numbers, like symbols or strings of text:</p>
+<pre><code>[emoji_graph1]
+</code></pre>
+<p>Of course, once we start doing this, there&rsquo;s no reason we have to draw functions in the classic way. We could also draw them as 2-column tables, like this:</p>
+<pre><code>[number_emoji_plot1]
+</code></pre>
+<p>Or as a kind of network diagram:</p>
+<pre><code>[number_emoji_digraph1]
+</code></pre>
+<p>Do you see the connection between these diagrams? How might we convert from one form to another?</p>
+<p>Note on language: The formal name for our last diagram is a &ldquo;directed graph&rdquo;. Unfortunately, the first kind of diagram we drew is also usually called a &ldquo;graph&rdquo;. To avoid confusion, we&rsquo;ll switch to calling the traditional x-y diagrams &ldquo;plots&rdquo;, and the network diagrams &ldquo;digraphs&rdquo;.</p>
+<pre><code>[plot_vs_digraph]
+</code></pre>
+<p>In digraphs, only the connections between the labels are considered to matter. The arrangement of the labels in space doesn&rsquo;t matter. So, for example, we consider all of these to be &ldquo;the same digraph&rdquo;:</p>
+<pre><code>[equivalent_digraphs]
+</code></pre>
+<p>To indicate that we consider things to be pretty much the same, even if they look different, we can write an equals sign between them:</p>
+<pre><code>[digraph_equals]
+</code></pre>
+<p>(It might seem strange to have an equation between things that aren&rsquo;t numbers. You get used to it.)</p>
+<p>We actually have some similar rules of equality for our other types of diagrams. For instance, I want our tables to be <em>unordered</em>: only the presence or absence of a row should matter, not where it is in the table. So we can write equals signs between tables with the same rows in different orders:</p>
+<pre><code>[table_equals]
+</code></pre>
+<p>And we can even rearrange the labels around the outside of our x-y plots:</p>
+<pre><code>[plot_equals]
+</code></pre>
+<p>(Although this is very upsetting in the case of numbers, because it puts them out of order.)</p>
+<p>To recap: so far, we have five different ways to draw functions:</p>
+<pre><code>[equations_machines_plots_tables_digraphs]
+</code></pre>
+<p>That&rsquo;s quite enough to deal with, so we&rsquo;ll stop there. But you might wonder: which way is the <em>real</em> way to draw functions? What are functions <em>really</em>? Unfortunately, the answer depends on who you ask.</p>
+<ul>
+<li>
+<p>An ancient Greek mathematician might say: none of these pictures are real. Functions are actually Platonic Ideals that exist eternally outside time and space. These diagrams are all pale imitations of them &ndash; their imperfect reflections on the wavering surface of our impure world.</p>
+</li>
+<li>
+<p>A mathematician from the 1900s might say: a function is a kind of formal term (game piece) within the formal system (game ruleset) called Zermelo-Frankel Set Theory. All of these pictures are just playful illustrations, which don&rsquo;t have much to do with mathematics proper.</p>
+</li>
+<li>
+<p>A modern, diagrammatic mathematician might say: all of these pictures of functions are real! They all contain the same information, and we can convert back and forth between them as needed, so any one of them is as good as any of the others. In fact, being able to move between them is useful for solving real problems.</p>
+</li>
+</ul>
+<p>A modern mathematician might draw the following diagram:</p>
+<p>[function_diagrams_isomorphisms]</p>
+<p>The half-squiggly equals sign $\cong$ means &ldquo;contains the same information as&rdquo; or &ldquo;can be converted back and forth in a reversible way&rdquo;. $A \cong B$ is read aloud as &ldquo;A <em>is isomorphic to</em> B&rdquo; &ndash; isomorphic translates to something like &ldquo;same-shape&rdquo;.</p>
+<p>To be more explicit, we can describe strategies for converting back and forth between these different forms:</p>
+<ul>
+<li>
+<p>To go from a 2-d plot to a table, go through each marked cell, find its x and y coordinates, and write them down in a table.
+[plot2table]</p>
+</li>
+<li>
+<p>To go from a table to a graph, go through each row in the table, and fill in the box with those coordinates.
+[table2plot]</p>
+</li>
+<li>
+<p>To go from a 2d plot to a digraph, draw circles around the input and output labels. Go through each marked cell, and draw a bent arrow from the input label to the output label. Then, rearrange the input and output nodes and unbend the arrows.
+[plot2digraph]</p>
+</li>
+<li>
+<p>To go from a digraph to a 2d plot, go through each arrow, and fill in the box corresponding to its input and output coordinates.
+[digraph2plot]</p>
+</li>
+</ul>
+<p>Exercise: Convert this table to a digraph:</p>
+<p>[table2no_digraph]</p>
+<p>Exercise: Write down a recipe for converting tables into digraphs.</p>
+<p>We can find similar recipes for moving between our other forms &ndash; equations and machine-diagrams &ndash; but we&rsquo;ll need some more tools first. Also, right now we&rsquo;re being <em>informal</em> &ndash; playing a fast and loose mathematical game.</p>
+<p>To be more formal, we&rsquo;ll need to make the rules a little stricter. We&rsquo;ll design a game where diagrams are game pieces, and our conversion strategies are moves. Then we&rsquo;ll be able to show that, according of the rules of the game, our conversion strategies are reversible &ndash; each of them is a move that has another move that perfectly undoes it.</p>
+<p>This kind of thing &ndash; converting loose real-world reasoning to strict role-playing games &ndash; is called <em>formalization</em> or <em>mathematical rigor</em>. Before we formalize, though, we need to cover the other kind of piece we want to play with. It&rsquo;s my favorite.</p>
+<h2 id="relations">Relations</h2>
+<p>Relations are not usually explained very well. People mostly just learn the rules for $=$, and sometimes $&lt;$, and don&rsquo;t learn that these are part of a broader class of objects.</p>
+<p>Just like functions, there are many ways to understand and picture relations. To start, I&rsquo;ll just show you some pictures, so you can get an idea. Here are some pictures of relations:</p>
+<pre><code>[some_relations_matrix]
+</code></pre>
+<p>You may notice that these look a lot like functions: they fit into all the same kinds of pictures. So what&rsquo;s the difference?</p>
+<p>The difference is that, where a function has to take any input to <em>exactly one</em> output, a relation can take an input to <em>any number</em> of outputs: many, or zero. This is clear in the digraph picture:</p>
+<pre><code>[relations_vs_functions_digraph]
+</code></pre>
+<p>A similar distinction holds for the table story. A function-table has each possible input appear in exactly one row:</p>
+<pre><code>[relations_vs_functions_table]
+(annotation: each value appears once; this value appears multiple times; this value does not appear.)
+</code></pre>
+<p>But as you can see, this isn&rsquo;t true for relation-tables.</p>
+<p>In function-plots, every column (input-value) has exactly one cell filled, but this isn&rsquo;t true for relation-plots.</p>
+<pre><code>[relations_vs_functions_plot]
+</code></pre>
+<p>It&rsquo;s slightly harder to translate relations to the traditional story of input-output machines. A relation can take one input to many outputs: does that mean the machine produces many outputs at once?</p>
+<pre><code>[relation_machine_spewing]
+</code></pre>
+<p>Or that the machine randomly selects an output?</p>
+<pre><code>[relation_machine_rolling_dice]
+</code></pre>
+<p>In my opinion, neither of these stories is quite right. They are both useful &ndash; the first one has to do with set-valued functions, and the second one has to do with probability. But I think there&rsquo;s a better place to start. In my opinion, it&rsquo;s best to think of relations as being <em>constraints</em>. Let me give an example.</p>
+<p>Say we have a ball bearing trapped in a groove on a piece of metal:</p>
+<pre><code>[ball_bearing_1]
+</code></pre>
+<p>The ball can&rsquo;t get out of the groove, it&rsquo;s trapped, but it can move freely within the groove.
+We can divide the surface of the metal up, using a grid:</p>
+<pre><code>[ball_bearing_grid]
+</code></pre>
+<p>Now we can describe the position of the ball using grid coordinates.
+Constraints arise when we ask:</p>
+<pre><code>&quot;If I know the horizontal position of the ball, what do I know about the vertical position of the ball?&quot;
+</code></pre>
+<p>Depending on the shape of the groove, we may have more or less information.
+For instance, if we have a groove that goes in a diagonal line:</p>
+<pre><code>[diagonal groove]
+</code></pre>
+<p>Then when we measure the horizontal grid cell of the ball, there is only one vertical position it can be in. We know &ldquo;exactly&rdquo; where the ball is.</p>
+<p>(Of course the ball can still move around inside its grid cell:</p>
+<pre><code>[groove_coarse]
+</code></pre>
+<p>But we&rsquo;re ignoring that for now. If we wanted to keep track of that information, we&rsquo;d need a finer grid.)</p>
+<p>That shape of groove is still compatible with the idea of functions &ndash; we can think of the horizontal position as being an &ldquo;input&rdquo;, which uniquely determines a single &ldquo;output&rdquo;. But for many groove shapes this story falls apart. (In fact, most of them &ndash; see <em>Appendix: Counting</em>.)</p>
+<p>For instance, if the groove has a vertical slice at one end:</p>
+<pre><code>[groove_function_with_vertical]
+</code></pre>
+<p>Now the horizontal position doesn&rsquo;t always determine the vertical position anymore. Most of the time, it does. But if the ball is all the way to the right, then the horizontal position only gives us partial information.</p>
+<p>For other grooves, like a circle:</p>
+<pre><code>[groove_circle]
+</code></pre>
+<p>The horizontal position never determines the vertical position of the ball. There&rsquo;s always two options, depending on whether the ball is in the upper half or lower half of the circle.</p>
+<p>Why is it useful to be able to think about systems like this? It turns out that systems like this emerge very commonly in science and engineering. In the natural world, variables are not cleanly divided into inputs and outputs. We may be able to measure a system in different ways, and some of these measurements can give us partial information about the other ones, but they usually don&rsquo;t give us complete information. Some nice articles talking about this point of view are [TODO] &ndash; from a control systems point of view &ndash; and [TODO] &ndash; from a mathematical point of view.</p>
+<p>So, that&rsquo;s my answer to &ldquo;what is a relation.&rdquo; It&rsquo;s just a constraint between different variables, without necessarily having inputs or outputs. So, how are we going to draw this as a machine? We can actually keep the same picture:</p>
+<pre><code>[relation_machine]
+</code></pre>
+<p>But now we think of it as a constraint &ndash; it allows certain combinations of values to occur on either side of it, and forbids other combinations. (If you&rsquo;re familiar with electronics, this is very much like a circuit component, which imposes constraints on the voltages and currents around it, but doesn&rsquo;t treat any of these as &ldquo;inputs&rdquo; or &ldquo;outputs&rdquo;.)</p>
+<p>To write that a constraint holds between two constants, we write its name between them. For instance, <code>1 = 1</code> or <code>3 &lt; 5</code>. Or, if <code>R</code> is</p>
+<pre><code>[R_sample_table]
+</code></pre>
+<p>Then we can write <code>[smile] R [frown]</code>. Note: it&rsquo;s bad form to write a constraint between two variables if it doesn&rsquo;t actually hold. Mathematicians usually get mad at you if you write <code>1 = 2</code>, for instance.</p>
+<p>We can do a similar thing for writing that a constraint holds between variables. We can write <code>x &lt;= y</code> to describe a system where the variable <code>x</code> must be less than or equal to <code>y</code>. To draw a picture of such a situation, we go through all the possible combinations of <code>x</code> and <code>y</code>, and mark the ones where the constraint holes.</p>
+<pre><code>[leq_rel_row_vector]
+</code></pre>
+<p>If we want to liven up our notation a little, we can add in shapes. For instance, in traditional notation</p>
+<pre><code>[f_equals_goesto]
+</code></pre>
+<p>are considered to mean the same thing. Of course, we don&rsquo;t have to use an arrow &ndash; we could label the ends of the relation instead:</p>
+<pre><code>[labeled_barbells]
+</code></pre>
+<p>This is maybe more appropriate, since arrows are traditionally associated more with functions than relations, but it makes plots kinda bulky:</p>
+<pre><code>[bulky_labeled_barbells]
+</code></pre>
+<p>So kind of a matter of taste.</p>
+<p>(Consider this picture:
+[labeled_barbells_variables]
+Here we are using <code>x</code> and <code>y</code> both as variables, and as labels. It&rsquo;s kind of confusing&hellip;)</p>
+<p>IMPORTANT NOTE: in traditional notation, order on the page matters!</p>
+<p>[trad_order_inequality]</p>
+<p>When we add decorations, we can do things like this:</p>
+<p>[decorated_equalities_and_inequalities]</p>
+<p>But in traditional notation, math text always goes in a line, and can&rsquo;t rotate or rearrange itself. It&rsquo;s like the decorations are still there, but hidden, and always point in one direction, aligned with the surrounding text.</p>
+<p>[understanding_trad_notation]</p>
+<p>It&rsquo;s mainly a matter of personal taste whether you want to label the endpoints of a relation by names, or by position. As a programmer, I prefer labeling by name rather than by position &ndash; I think it&rsquo;s usually clearer &ndash; but it does take up more room, and take longer to write.</p>
+<h2 id="more-variables">More variables</h2>
+<p>A brief side note: relations extend naturally to more than two variables.</p>
+<pre><code>[higher_order_relations_matrix]
+</code></pre>
+<p>Some of the visualizations fall apart as you add more variables though.</p>
+<pre><code>[too_higher_order]
+</code></pre>
+<p>The other ones keep working, and the math still works. (This is what mathematicians are talking about when they mention &ldquo;higher-dimensional space&rdquo;, by the way. Systems of many linked variables, it doesn&rsquo;t have to be physical space.)</p>
+<p>We&rsquo;re going to mostly focus on the two-variable case, since it&rsquo;s traditional. But the higher-dimensional relations will peek through quite a bit.</p>
+<h1 id="working-with-relations">Working with relations</h1>
+<p>We&rsquo;ve talked a lot about what relations <em>are</em>, and how to visualize them, but how do we do proper math with them?</p>
+<p>High-school math focuses on operations (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) and relationships (<code>=</code>, <code>&lt;</code>) between numbers. We&rsquo;re going to instead focus on operations and relationships between relations. (If you think this is meta, just wait.)</p>
+<p>&hellip;</p>
+<h1 id="implies-implies-implies-implies">(implies implies) implies (implies)</h1>
+<p>i&rsquo;ll modus ur ponens..</p>
+<p>&hellip;</p>
+<p>this rule is extremely useful for working mathematicians, but a great challenge for learning mathematicians.</p>
+<p>If you see</p>
+<p>(a =&gt; c)</p>
+<p>and everybody else nods and agrees, <em>you</em> have to go and figure out what <em>b</em> was. How did they get there? What are they doing? Nobody can figure this out for you but yourself.</p>
+<p>The primary skill acquired through mathematical training is the ability to fill in gaping holes in proofs. For the uninitiated, mathematics will seem to be much more hole than proof. It&rsquo;s all cross-references and citations, seemingly unanchored from the world.</p>
+
+    
+  </article>
+  <div class="paginator">
+    
+    <a class="link" href="https://kazimuth.github.io/blog/beta/post/shake-and-pull-gently/">← prev</a>
+    
+    
+    <a></a>
+    
+  </div>
+  <div class="comment">
+    
+    
+    
+    
+    
+    
+  </div>
+  
+</main>
+
+    <footer id="footer">
+  <div>
+    <span>© 2022</span> - <span>2023</span>
+  </div>
+
+  <div>
+    <span>Powered by </span>
+    <a class="link" href="https://gohugo.io/">Hugo</a>
+    <span> 🍦 Theme </span>
+    <a class="link" href="https://github.com/queensferryme/hugo-theme-texify">TeXify</a>
+  </div>
+
+  <div class="footnote">
+    <span></span>
+  </div>
+</footer>
+
+  </div>
+
+  
+  
+
+  
+  
+
+  
+  
+
+</body>
+
+</html>

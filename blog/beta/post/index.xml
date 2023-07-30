@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on james&#39;s web log</title>
+    <link>https://kazimuth.github.io/blog/beta/post/</link>
+    <description>Recent content in Posts on james&#39;s web log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Jul 2023 18:14:54 -0400</lastBuildDate><atom:link href="https://kazimuth.github.io/blog/beta/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visualizing Functions and Relations</title>
+      <link>https://kazimuth.github.io/blog/beta/post/functions-and-relations/</link>
+      <pubDate>Mon, 24 Jul 2023 18:14:54 -0400</pubDate>
+      
+      <guid>https://kazimuth.github.io/blog/beta/post/functions-and-relations/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The universe is not veiled; all its activities lie open.&lt;/p&gt;
+&lt;p&gt;  — &lt;a href=&#34;https://en.wikipedia.org/wiki/Yuanwu_Keqin&#34;&gt;圓悟克勤&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Many people seem to think that math is boring, unpleasant, and difficult to understand. These people are right; but I wish they weren&amp;rsquo;t.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s important to understand that math is &lt;em&gt;basically&lt;/em&gt; just a pen-and-paper board game, like dungeons and dragons. The rules of math are carefully designed to simulate the real world. It&amp;rsquo;s not magic.&lt;/p&gt;
+&lt;p&gt;But math isn&amp;rsquo;t taught this way. It&amp;rsquo;s taught as an strict and arcane collection of rules that have to be memorized, on pain of bad test scores. Not much time is spent helping students understand &lt;em&gt;why&lt;/em&gt; we choose these rules. Various people have made the case that this is not a good way to operate (&lt;a href=&#34;https://betterexplained.com/about/&#34;&gt;[1]&lt;/a&gt; &lt;a href=&#34;https://graphicallinearalgebra.net/&#34;&gt;[2]&lt;/a&gt; &lt;a href=&#34;https://www.youtube.com/@3blue1brown?app=desktop&#34;&gt;[3]&lt;/a&gt; &lt;a href=&#34;https://www.youtube.com/@Vihart/videos&#34;&gt;[4]&lt;/a&gt; &lt;a href=&#34;https://www.youtube.com/watch?v=jvPPXbo87ds&#34;&gt;[5]&lt;/a&gt;). There&amp;rsquo;s a growing wave of math resources focusing on intuitive, sensory engagement with math.&lt;/p&gt;
+&lt;p&gt;I think resources like this are especially needed for modern pure mathematics. For about a century, the style in professional math has been:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;no pictures in publications (you&amp;rsquo;re allowed to draw them for your friends &lt;a href=&#34;?&#34;&gt;cite&lt;/a&gt; but publishing them isn&amp;rsquo;t allowed)&lt;/li&gt;
+&lt;li&gt;all notation as concise and abstract as possible&lt;/li&gt;
+&lt;li&gt;use as many fancy tricks to describe your problem as you can think of&lt;/li&gt;
+&lt;li&gt;leave as much unsaid as possible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This makes pure math seem much scarier than it really is.&lt;/p&gt;
+&lt;p&gt;This post is about two important pure-mathematical tools: functions and relations. These are extremely important pieces in the board game of modern math. We&amp;rsquo;ll see different ways to understand and visualize them, go through some of the properties they can have, and find out the special moves that these properties unlock.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll be mixing pictures, classic math notation, and modern &lt;em&gt;formal diagrams&lt;/em&gt;. These are pictures that act as board game pieces, with rules for how you&amp;rsquo;re allowed to combine and modify them.&lt;/p&gt;
+&lt;p&gt;The goal of this post is to understand the following sentence:&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+&lt;p&gt;&lt;b&gt;A function is an input-total relation that preserves equality.&lt;/b&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;By &amp;ldquo;understand&amp;rdquo;, I mean both to get an intuitive understanding of what it means, and to know how to &lt;em&gt;prove&lt;/em&gt; it &amp;ndash; how to use it as a strategy in the game of formal math, if a pro mathematician challenges you to a duel.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s begin.&lt;/p&gt;
+&lt;h2 id=&#34;whats-a-relation&#34;&gt;What&amp;rsquo;s a relation?&lt;/h2&gt;
+&lt;p&gt;First, we need to define our playing pieces. The most basic piece we&amp;rsquo;ll use is called a &lt;em&gt;binary relation&lt;/em&gt;. Before we start writing out equations and strict mathematical rules, let&amp;rsquo;s try to get a general sense of what a binary relation looks like. There are actually multiple ways to draw them, but they&amp;rsquo;re all connected.&lt;/p&gt;
+&lt;h3 id=&#34;diagram-type-one-directed-graphs&#34;&gt;Diagram type one: Directed Graphs&lt;/h3&gt;
+&lt;p&gt;My favorite explanation is that a binary relation is a &lt;em&gt;directed graph&lt;/em&gt;, or &lt;em&gt;digraph&lt;/em&gt;, which looks like this:&lt;/p&gt;
+&lt;!-- SCALE: drawio 1in -&gt; 108pt --&gt; 
+&lt;div class=&#34;centerer&#34;&gt;
+&lt;img alt=&#34;Circles labeled 1,2,3,4. There are arrows going 1 to 2, 1 to 3, 3 to 4, 4 to 1&#34; src=&#34;assets/R_Graph1.svg&#34; width=&#34;324pt&#34; height=&#34;324pt&#34;&gt;
+&lt;/div&gt;
+&lt;p&gt;A digraph is a collection of &lt;em&gt;nodes&lt;/em&gt; &amp;ndash; labeled circles &amp;ndash; and a collection of &lt;em&gt;edges&lt;/em&gt; &amp;ndash; little arrows going between the nodes. We can model all sorts of situations with digraph. For instance, a family tree can be represented as a digraph:&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+&lt;img alt=&#34;Circles labeled Cindy,Felix,Ray,Eileen,Rob,Louise,Jim,Mac. There are arrows going Cindy to Rob, Felix to Rob, Ray to Louise, Eileen to Louise, Rob to Jim, Rob to Mac, Louise to Jim, Louise to Mac&#34; src=&#34;assets/Family_Digraph_1.svg&#34; width=&#34;432pt&#34; height=&#34;540pt&#34;&gt;
+&lt;/div&gt;
+&lt;p&gt;Here, the nodes are names, and we draw edges from parents to children.
+We can also draw graphs of love triangles:&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+&lt;img alt=&#34;TODO&#34; src=&#34;assets/Love Triangles.drawio.svg&#34; width=&#34;756pt&#34; height=&#34;540pt&#34;&gt;
+&lt;/div&gt;
+&lt;p&gt;Notice that nodes are allowed to have edges to themselves. Also, nodes don&amp;rsquo;t have to have any edges, like in the &amp;ldquo;Romantic Comedy&amp;rdquo; example, where C is a sidekick who is not romantically interested in A or B.&lt;/p&gt;
+&lt;p&gt;We can also draw a digraph of which classes use which books in a school:&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+&lt;img alt=&#34;TODO&#34; src=&#34;assets/Classes_Regular_Arrows.drawio.svg&#34; width=&#34;648pt&#34; height=&#34;440pt&#34;&gt;
+&lt;/div&gt;
+&lt;p&gt;Notice how this graph is divided into two parts &amp;ndash; the classes and the books. Also, all the edges go from classes to books. Graphs like this are called &amp;ldquo;bipartite&amp;rdquo; (which means &amp;ldquo;two parts&amp;rdquo;).&lt;/p&gt;
+&lt;p&gt;This kind of digraph is particularly easy to convert to our next kind of diagram: a two-column table.&lt;/p&gt;
+&lt;h3 id=&#34;diagram-type-two-two-column-tables&#34;&gt;Diagram Type Two: Two-Column Tables&lt;/h3&gt;
+&lt;p&gt;Here is the Classes-Books relation, redrawn as a two-column table.&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+    &lt;table class=&#34;diagramtable&#34;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;&lt;th class=&#34;left&#34;&gt;Class&lt;/th&gt;&lt;th class=&#34;right&#34;&gt;Book&lt;/th&gt;&lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;&lt;td&gt;English Lit 101&lt;/td&gt;&lt;td&gt;Hamlet&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;English Lit 101&lt;/td&gt;&lt;td&gt;Moby Dick&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Whaling 101&lt;/td&gt;&lt;td&gt;Moby Dick&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Math 203&lt;/td&gt;&lt;td&gt;The Calculus Reader&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Astronomy 101&lt;/td&gt;&lt;td&gt;The Planetary System&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;This is less exciting, but more orderly.&lt;/p&gt;
+&lt;p&gt;Relations can be named with a letter, like &amp;ldquo;R&amp;rdquo;, or a symbol, like &amp;ldquo;=&amp;rdquo; or &amp;ldquo;&amp;lt;&amp;rdquo;. I always write quotes around a symbol to indicate I&amp;rsquo;m talking about it as &lt;em&gt;just a symbol&lt;/em&gt; rather than a variable or something.&lt;/p&gt;
+&lt;p&gt;We can also draw relations in a different kind of table, which I will call a &amp;ldquo;2-d plot&amp;rdquo;:&lt;/p&gt;
+&lt;p&gt;[R_2d_plot]&lt;/p&gt;
+&lt;p&gt;(This might remind you of the way we learned to draw functions in middle school:
+[function_example]
+but for this post, we&amp;rsquo;re always going to be working with &lt;em&gt;discrete&lt;/em&gt; mathematical objects &amp;ndash; basically, objects made of big separate chunks, not smooth shapes.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s pretty easy to take something smooth and convert it to something discrete, using a grid:
+[function_discretized]
+This is how digital cameras work, for instance.)&lt;/p&gt;
+&lt;p&gt;(Other Note: relations are more general than functions! for instance, they can go vertically:&lt;/p&gt;
+&lt;p&gt;we&amp;rsquo;ll talk a lot about that soon. But I haven&amp;rsquo;t defined a function yet, so forget this for now.
+)&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s sort of like a multiplication table, but in each box, we only mark a single piece of information: whether that edge is in the relation, or not.&lt;/p&gt;
+&lt;p&gt;An important thing to keep in mind about relations is that &lt;em&gt;only the connectivity of a relation matters&lt;/em&gt;. We don&amp;rsquo;t care if the nodes have been rearranged, as long as the connections between them are the same. For instance, we consider all of the following relations to be the same:&lt;/p&gt;
+&lt;p&gt;[R_rearranging_digraph]&lt;/p&gt;
+&lt;p&gt;Two say that we consider two different things to be &amp;ldquo;the same enough for our purposes&amp;rdquo;, we will write an equals sign between them:&lt;/p&gt;
+&lt;p&gt;[R_rearranging_digraph_equals]&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;=&amp;rdquo; is a relation that you may have seen before. There are some traditional rules associated with it, which we&amp;rsquo;ll go over in a bit.&lt;/p&gt;
+&lt;p&gt;(You might notice that in this case, &amp;ldquo;=&amp;rdquo; is a relation that is &lt;em&gt;going between relations&lt;/em&gt; &amp;ndash; its nodes are themselves entire relations. This is allowed, but it gets confusing very quickly, so we&amp;rsquo;re not going to emphasize it much. It&amp;rsquo;s might be easier to think of &amp;ldquo;=&amp;rdquo; as being just a special symbol with its own rules attached.)&lt;/p&gt;
+&lt;p&gt;Similarly to the rule for directed graphs, we can declare that the order of rows in a table don&amp;rsquo;t matter:&lt;/p&gt;
+&lt;p&gt;[R_rearranging_tables]&lt;/p&gt;
+&lt;p&gt;And similarly, the order of rows and columns in a 2-d plot don&amp;rsquo;t matter:&lt;/p&gt;
+&lt;p&gt;[R_rearranging_plots]&lt;/p&gt;
+&lt;p&gt;(This means you can put the numbers out of order on the sides of your plots. This is upsetting, but there&amp;rsquo;s no rule against it.)&lt;/p&gt;
+&lt;p&gt;We consider tables, plots, and digraphs depicting a relation to be the same:&lt;/p&gt;
+&lt;p&gt;[R_digraph_eq_plot_eq_]&lt;/p&gt;
+&lt;p&gt;Another, subtler rule is that the nodes available on each side of a relation matter, even if no edge touches them. For instance, we consider these two relations to be DIFFERENT:&lt;/p&gt;
+&lt;p&gt;[R_S_digraph_neq]&lt;/p&gt;
+&lt;p&gt;The symbol &amp;ldquo;$\neq$&amp;rdquo; is read &amp;ldquo;does not equal&amp;rdquo;. These two relations are not equal, even though they have the same edges, there are some extra nodes available on the right side. Keeping track of this information is why we always write the available nodes in the column headers:&lt;/p&gt;
+&lt;p&gt;[R_S_table_neq_emph_available]&lt;/p&gt;
+&lt;p&gt;We can also write short descriptions, like &amp;ldquo;x: 1..10&amp;rdquo; if every entry in the column &amp;ldquo;x&amp;rdquo; comes from the collection of nodes {1,2,3,4,5,6,7,8,9,10}.&lt;/p&gt;
+&lt;p&gt;This information is basically just mathematical bookkeeping, but in one case, it unlocks a special drawing technique. If the nodes on the left and the right sides of a relation are exactly the same, then instead of drawing it like this (&amp;quot;&lt;em&gt;bipartite&lt;/em&gt;&amp;quot;):&lt;/p&gt;
+&lt;p&gt;[U_digraph_bipartite]&lt;/p&gt;
+&lt;p&gt;We can draw it like this:&lt;/p&gt;
+&lt;p&gt;[U_digraph_unipartite]&lt;/p&gt;
+&lt;p&gt;Where we&amp;rsquo;ve overlaid the nodes on the left and right half of the diagram. This kind of drawing often reveals interesting structure in a relation:&lt;/p&gt;
+&lt;p&gt;[eq_le_bipartite_to_uni_digraph]&lt;/p&gt;
+&lt;p&gt;More generally, if a node is repeated on one side of a digraph, we consider that the same as if the two copies of the node were glued together:&lt;/p&gt;
+&lt;p&gt;[identification]&lt;/p&gt;
+&lt;p&gt;This lets us give a nice explanation of how to convert between tables and digraphs:&lt;/p&gt;
+&lt;p&gt;[digraph_to_table]&lt;/p&gt;
+&lt;p&gt;A final point is that repeated edges count as a single edge:&lt;/p&gt;
+&lt;p&gt;[digraph_repeated]&lt;/p&gt;
+&lt;p&gt;Just like how repeated nodes count as a single node.&lt;/p&gt;
+&lt;h2 id=&#34;describing-relations&#34;&gt;Describing relations&lt;/h2&gt;
+&lt;p&gt;So far, what we&amp;rsquo;ve been doing doesn&amp;rsquo;t look much like traditional math. It&amp;rsquo;s all pictures! Isn&amp;rsquo;t math supposed to have equations and stuff?&lt;/p&gt;
+&lt;p&gt;The answer is: actually, it&amp;rsquo;s fine for math to be made of pictures. The original Greek mathematicians drew lots of pictures! But sometime around the late 1800s, pictures started to be considered &lt;em&gt;informal&lt;/em&gt;. Only math made of ordered sequences of symbols counted as &amp;ldquo;real math&amp;rdquo;. There&amp;rsquo;s a modern movement to get rid of this requirement though, called &lt;em&gt;diagrammatic mathematics&lt;/em&gt;. I love diagrammatic mathematics.&lt;/p&gt;
+&lt;p&gt;But it&amp;rsquo;s still useful to be able to make math out of symbols in a line. For one thing, it lets you explain things to mathematicians that prefer things that way. Also, computer memory is basically a sequence of boxes with symbols in them, and it&amp;rsquo;s useful to learn how to squish things so that they fit in that shape.&lt;/p&gt;
+&lt;p&gt;To write a relation in a line, we can write it as a sequence of &lt;em&gt;ordered pairs&lt;/em&gt; (a, b) between brackets:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;R = {(1, &amp;quot;a&amp;quot;), (2, &amp;quot;b&amp;quot;), (2, &amp;quot;c&amp;quot;), (3, &amp;quot;c&amp;quot;)}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alternatively, we can write it as a collection of labeled pairs (x: a, y: b):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;R = {(x: 1, y: &amp;quot;a&amp;quot;), (x: 2, y: &amp;quot;b&amp;quot;), (x: 2, y: &amp;quot;c&amp;quot;), (x: 3, y: &amp;quot;c&amp;quot;)}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Labeled pairs take up more space, which is probably why they&amp;rsquo;re rarely used in traditional mathematics texts. They&amp;rsquo;re common in the database literature though.&lt;/p&gt;
+&lt;p&gt;Rather than describing the hold relations&lt;/p&gt;
+&lt;p&gt;&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;I had a thought but I lost it&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ah: the rule that equal things can be overlapped as if they were the same object is a primordial mathematical rule called the &lt;em&gt;substitution property of equality&lt;/em&gt;. Or, &amp;ldquo;like can be substituted for like&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;We can also do a dirty trick and avoid defining&lt;/p&gt;
+&lt;p&gt;This corre&lt;/p&gt;
+&lt;p&gt;&amp;hellip;.&lt;/p&gt;
+&lt;h3 id=&#34;todospoiler_somehow-read-if-you-are-familiar-with-the-rules-of-formal-math-andor-programming&#34;&gt;TODO:SPOILER_SOMEHOW Read if you are familiar with the rules of formal math and/or programming:&lt;/h3&gt;
+&lt;p&gt;To describe our relation &amp;ldquo;R&amp;rdquo; using ordered symbols, we can write something like the following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;R is a labeled binary relation on the types 1..3 and &amp;ldquo;a&amp;rdquo;..&amp;ldquo;c&amp;rdquo; such that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(x: 1, y: &amp;ldquo;a&amp;rdquo;) is in R&lt;/li&gt;
+&lt;li&gt;(x: 2, y: &amp;ldquo;b&amp;rdquo;) is in R&lt;/li&gt;
+&lt;li&gt;(x: 2, y: &amp;ldquo;c&amp;rdquo;) is in R&lt;/li&gt;
+&lt;li&gt;(x: 3, y: &amp;ldquo;c&amp;rdquo;) is in R&lt;/li&gt;
+&lt;li&gt;no other records are in R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Note: a &amp;ldquo;type&amp;rdquo; is a mathematical description of the forms a variable can take, and a &amp;ldquo;record&amp;rdquo; is the mathematical equivalent of a form with filled-in boxes:&lt;/p&gt;
+&lt;p&gt;[record, form]&lt;/p&gt;
+&lt;p&gt;We can write this more compactly:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;R: Set[(x: 1..3, y: &amp;ldquo;a&amp;rdquo;..&amp;ldquo;c&amp;rdquo;)] = {
+(1, &amp;ldquo;a&amp;rdquo;),
+(2, &amp;ldquo;b&amp;rdquo;),
+(2, &amp;ldquo;c&amp;rdquo;),
+(3, &amp;ldquo;c&amp;rdquo;)
+}&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A &amp;ldquo;Set&amp;rdquo; is a collection of objects in no particular order. A Set[(x: )]&lt;/p&gt;
+&lt;p&gt;For programmers, we can translate this fairly literally to the programming language Python. If you&amp;rsquo;re not a programmer, ignore the following.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#00f;font-weight:bold&#34;&gt;dataclasses&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;import&lt;/span&gt; dataclass
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#00f;font-weight:bold&#34;&gt;typing&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;import&lt;/span&gt; Union, Literal, Set
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;OneToThree &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Union[Literal[&lt;span style=&#34;color:#666&#34;&gt;1&lt;/span&gt;], Literal[&lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;], Literal[&lt;span style=&#34;color:#666&#34;&gt;3&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AToC &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Union[Literal[&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;], Literal[&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt;], Literal[&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f&#34;&gt;@dataclass&lt;/span&gt;(frozen&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#00f&#34;&gt;XY&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    x: OneToThree
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    y: AToC
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;R: Set[XY] &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    XY(x&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;1&lt;/span&gt;, y&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    XY(x&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;, y&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    XY(x&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;, y&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    XY(x&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;3&lt;/span&gt;, y&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f&#34;&gt;print&lt;/span&gt;(R)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And then if we run this script, the computer will politely print out a one-line representation of R.&lt;/p&gt;
+&lt;h2 id=&#34;defining-relations-by-rules&#34;&gt;Defining relations by rules&lt;/h2&gt;
+&lt;p&gt;You may remember equations like this from middle school:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$$y = f(x)$$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Often accompanied by graphs like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[graph1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In that equation, $f$ is called a function, and $=$ is called a relation.&lt;/p&gt;
+&lt;p&gt;Functions are often explained as a type of machine that eats inputs and produces outputs:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[machine1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We imagine the lines in this diagram as wires along which numbers can flow. The idea is, if you put the number 3, say, into the input wire, the machine will churn for a bit, and then spit out another number on the output wire, like 6.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[machine1_churning]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We give this number a new name, $f(3)$, and write $f(3) = 7$ to indicate that the machine $f$ always outputs $7$ when you feed it $3$.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;ll be helpful for our purposes to focus on functions that go between discrete collections of objects, like whole numbers, rather than continuous ranges of objects, like the number line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[number_plot1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can also use other things besides numbers, like symbols or strings of text:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[emoji_graph1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Of course, once we start doing this, there&amp;rsquo;s no reason we have to draw functions in the classic way. We could also draw them as 2-column tables, like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[number_emoji_plot1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or as a kind of network diagram:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[number_emoji_digraph1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Do you see the connection between these diagrams? How might we convert from one form to another?&lt;/p&gt;
+&lt;p&gt;Note on language: The formal name for our last diagram is a &amp;ldquo;directed graph&amp;rdquo;. Unfortunately, the first kind of diagram we drew is also usually called a &amp;ldquo;graph&amp;rdquo;. To avoid confusion, we&amp;rsquo;ll switch to calling the traditional x-y diagrams &amp;ldquo;plots&amp;rdquo;, and the network diagrams &amp;ldquo;digraphs&amp;rdquo;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[plot_vs_digraph]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In digraphs, only the connections between the labels are considered to matter. The arrangement of the labels in space doesn&amp;rsquo;t matter. So, for example, we consider all of these to be &amp;ldquo;the same digraph&amp;rdquo;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[equivalent_digraphs]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To indicate that we consider things to be pretty much the same, even if they look different, we can write an equals sign between them:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[digraph_equals]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(It might seem strange to have an equation between things that aren&amp;rsquo;t numbers. You get used to it.)&lt;/p&gt;
+&lt;p&gt;We actually have some similar rules of equality for our other types of diagrams. For instance, I want our tables to be &lt;em&gt;unordered&lt;/em&gt;: only the presence or absence of a row should matter, not where it is in the table. So we can write equals signs between tables with the same rows in different orders:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[table_equals]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And we can even rearrange the labels around the outside of our x-y plots:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[plot_equals]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(Although this is very upsetting in the case of numbers, because it puts them out of order.)&lt;/p&gt;
+&lt;p&gt;To recap: so far, we have five different ways to draw functions:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[equations_machines_plots_tables_digraphs]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&amp;rsquo;s quite enough to deal with, so we&amp;rsquo;ll stop there. But you might wonder: which way is the &lt;em&gt;real&lt;/em&gt; way to draw functions? What are functions &lt;em&gt;really&lt;/em&gt;? Unfortunately, the answer depends on who you ask.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;An ancient Greek mathematician might say: none of these pictures are real. Functions are actually Platonic Ideals that exist eternally outside time and space. These diagrams are all pale imitations of them &amp;ndash; their imperfect reflections on the wavering surface of our impure world.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A mathematician from the 1900s might say: a function is a kind of formal term (game piece) within the formal system (game ruleset) called Zermelo-Frankel Set Theory. All of these pictures are just playful illustrations, which don&amp;rsquo;t have much to do with mathematics proper.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A modern, diagrammatic mathematician might say: all of these pictures of functions are real! They all contain the same information, and we can convert back and forth between them as needed, so any one of them is as good as any of the others. In fact, being able to move between them is useful for solving real problems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A modern mathematician might draw the following diagram:&lt;/p&gt;
+&lt;p&gt;[function_diagrams_isomorphisms]&lt;/p&gt;
+&lt;p&gt;The half-squiggly equals sign $\cong$ means &amp;ldquo;contains the same information as&amp;rdquo; or &amp;ldquo;can be converted back and forth in a reversible way&amp;rdquo;. $A \cong B$ is read aloud as &amp;ldquo;A &lt;em&gt;is isomorphic to&lt;/em&gt; B&amp;rdquo; &amp;ndash; isomorphic translates to something like &amp;ldquo;same-shape&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;To be more explicit, we can describe strategies for converting back and forth between these different forms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;To go from a 2-d plot to a table, go through each marked cell, find its x and y coordinates, and write them down in a table.
+[plot2table]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To go from a table to a graph, go through each row in the table, and fill in the box with those coordinates.
+[table2plot]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To go from a 2d plot to a digraph, draw circles around the input and output labels. Go through each marked cell, and draw a bent arrow from the input label to the output label. Then, rearrange the input and output nodes and unbend the arrows.
+[plot2digraph]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To go from a digraph to a 2d plot, go through each arrow, and fill in the box corresponding to its input and output coordinates.
+[digraph2plot]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exercise: Convert this table to a digraph:&lt;/p&gt;
+&lt;p&gt;[table2no_digraph]&lt;/p&gt;
+&lt;p&gt;Exercise: Write down a recipe for converting tables into digraphs.&lt;/p&gt;
+&lt;p&gt;We can find similar recipes for moving between our other forms &amp;ndash; equations and machine-diagrams &amp;ndash; but we&amp;rsquo;ll need some more tools first. Also, right now we&amp;rsquo;re being &lt;em&gt;informal&lt;/em&gt; &amp;ndash; playing a fast and loose mathematical game.&lt;/p&gt;
+&lt;p&gt;To be more formal, we&amp;rsquo;ll need to make the rules a little stricter. We&amp;rsquo;ll design a game where diagrams are game pieces, and our conversion strategies are moves. Then we&amp;rsquo;ll be able to show that, according of the rules of the game, our conversion strategies are reversible &amp;ndash; each of them is a move that has another move that perfectly undoes it.&lt;/p&gt;
+&lt;p&gt;This kind of thing &amp;ndash; converting loose real-world reasoning to strict role-playing games &amp;ndash; is called &lt;em&gt;formalization&lt;/em&gt; or &lt;em&gt;mathematical rigor&lt;/em&gt;. Before we formalize, though, we need to cover the other kind of piece we want to play with. It&amp;rsquo;s my favorite.&lt;/p&gt;
+&lt;h2 id=&#34;relations&#34;&gt;Relations&lt;/h2&gt;
+&lt;p&gt;Relations are not usually explained very well. People mostly just learn the rules for $=$, and sometimes $&amp;lt;$, and don&amp;rsquo;t learn that these are part of a broader class of objects.&lt;/p&gt;
+&lt;p&gt;Just like functions, there are many ways to understand and picture relations. To start, I&amp;rsquo;ll just show you some pictures, so you can get an idea. Here are some pictures of relations:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[some_relations_matrix]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You may notice that these look a lot like functions: they fit into all the same kinds of pictures. So what&amp;rsquo;s the difference?&lt;/p&gt;
+&lt;p&gt;The difference is that, where a function has to take any input to &lt;em&gt;exactly one&lt;/em&gt; output, a relation can take an input to &lt;em&gt;any number&lt;/em&gt; of outputs: many, or zero. This is clear in the digraph picture:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[relations_vs_functions_digraph]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A similar distinction holds for the table story. A function-table has each possible input appear in exactly one row:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[relations_vs_functions_table]
+(annotation: each value appears once; this value appears multiple times; this value does not appear.)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But as you can see, this isn&amp;rsquo;t true for relation-tables.&lt;/p&gt;
+&lt;p&gt;In function-plots, every column (input-value) has exactly one cell filled, but this isn&amp;rsquo;t true for relation-plots.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[relations_vs_functions_plot]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It&amp;rsquo;s slightly harder to translate relations to the traditional story of input-output machines. A relation can take one input to many outputs: does that mean the machine produces many outputs at once?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[relation_machine_spewing]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or that the machine randomly selects an output?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[relation_machine_rolling_dice]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In my opinion, neither of these stories is quite right. They are both useful &amp;ndash; the first one has to do with set-valued functions, and the second one has to do with probability. But I think there&amp;rsquo;s a better place to start. In my opinion, it&amp;rsquo;s best to think of relations as being &lt;em&gt;constraints&lt;/em&gt;. Let me give an example.&lt;/p&gt;
+&lt;p&gt;Say we have a ball bearing trapped in a groove on a piece of metal:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[ball_bearing_1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The ball can&amp;rsquo;t get out of the groove, it&amp;rsquo;s trapped, but it can move freely within the groove.
+We can divide the surface of the metal up, using a grid:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[ball_bearing_grid]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we can describe the position of the ball using grid coordinates.
+Constraints arise when we ask:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;If I know the horizontal position of the ball, what do I know about the vertical position of the ball?&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Depending on the shape of the groove, we may have more or less information.
+For instance, if we have a groove that goes in a diagonal line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[diagonal groove]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then when we measure the horizontal grid cell of the ball, there is only one vertical position it can be in. We know &amp;ldquo;exactly&amp;rdquo; where the ball is.&lt;/p&gt;
+&lt;p&gt;(Of course the ball can still move around inside its grid cell:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[groove_coarse]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But we&amp;rsquo;re ignoring that for now. If we wanted to keep track of that information, we&amp;rsquo;d need a finer grid.)&lt;/p&gt;
+&lt;p&gt;That shape of groove is still compatible with the idea of functions &amp;ndash; we can think of the horizontal position as being an &amp;ldquo;input&amp;rdquo;, which uniquely determines a single &amp;ldquo;output&amp;rdquo;. But for many groove shapes this story falls apart. (In fact, most of them &amp;ndash; see &lt;em&gt;Appendix: Counting&lt;/em&gt;.)&lt;/p&gt;
+&lt;p&gt;For instance, if the groove has a vertical slice at one end:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[groove_function_with_vertical]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now the horizontal position doesn&amp;rsquo;t always determine the vertical position anymore. Most of the time, it does. But if the ball is all the way to the right, then the horizontal position only gives us partial information.&lt;/p&gt;
+&lt;p&gt;For other grooves, like a circle:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[groove_circle]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The horizontal position never determines the vertical position of the ball. There&amp;rsquo;s always two options, depending on whether the ball is in the upper half or lower half of the circle.&lt;/p&gt;
+&lt;p&gt;Why is it useful to be able to think about systems like this? It turns out that systems like this emerge very commonly in science and engineering. In the natural world, variables are not cleanly divided into inputs and outputs. We may be able to measure a system in different ways, and some of these measurements can give us partial information about the other ones, but they usually don&amp;rsquo;t give us complete information. Some nice articles talking about this point of view are [TODO] &amp;ndash; from a control systems point of view &amp;ndash; and [TODO] &amp;ndash; from a mathematical point of view.&lt;/p&gt;
+&lt;p&gt;So, that&amp;rsquo;s my answer to &amp;ldquo;what is a relation.&amp;rdquo; It&amp;rsquo;s just a constraint between different variables, without necessarily having inputs or outputs. So, how are we going to draw this as a machine? We can actually keep the same picture:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[relation_machine]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But now we think of it as a constraint &amp;ndash; it allows certain combinations of values to occur on either side of it, and forbids other combinations. (If you&amp;rsquo;re familiar with electronics, this is very much like a circuit component, which imposes constraints on the voltages and currents around it, but doesn&amp;rsquo;t treat any of these as &amp;ldquo;inputs&amp;rdquo; or &amp;ldquo;outputs&amp;rdquo;.)&lt;/p&gt;
+&lt;p&gt;To write that a constraint holds between two constants, we write its name between them. For instance, &lt;code&gt;1 = 1&lt;/code&gt; or &lt;code&gt;3 &amp;lt; 5&lt;/code&gt;. Or, if &lt;code&gt;R&lt;/code&gt; is&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[R_sample_table]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we can write &lt;code&gt;[smile] R [frown]&lt;/code&gt;. Note: it&amp;rsquo;s bad form to write a constraint between two variables if it doesn&amp;rsquo;t actually hold. Mathematicians usually get mad at you if you write &lt;code&gt;1 = 2&lt;/code&gt;, for instance.&lt;/p&gt;
+&lt;p&gt;We can do a similar thing for writing that a constraint holds between variables. We can write &lt;code&gt;x &amp;lt;= y&lt;/code&gt; to describe a system where the variable &lt;code&gt;x&lt;/code&gt; must be less than or equal to &lt;code&gt;y&lt;/code&gt;. To draw a picture of such a situation, we go through all the possible combinations of &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;, and mark the ones where the constraint holes.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[leq_rel_row_vector]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If we want to liven up our notation a little, we can add in shapes. For instance, in traditional notation&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[f_equals_goesto]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;are considered to mean the same thing. Of course, we don&amp;rsquo;t have to use an arrow &amp;ndash; we could label the ends of the relation instead:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[labeled_barbells]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is maybe more appropriate, since arrows are traditionally associated more with functions than relations, but it makes plots kinda bulky:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[bulky_labeled_barbells]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So kind of a matter of taste.&lt;/p&gt;
+&lt;p&gt;(Consider this picture:
+[labeled_barbells_variables]
+Here we are using &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt; both as variables, and as labels. It&amp;rsquo;s kind of confusing&amp;hellip;)&lt;/p&gt;
+&lt;p&gt;IMPORTANT NOTE: in traditional notation, order on the page matters!&lt;/p&gt;
+&lt;p&gt;[trad_order_inequality]&lt;/p&gt;
+&lt;p&gt;When we add decorations, we can do things like this:&lt;/p&gt;
+&lt;p&gt;[decorated_equalities_and_inequalities]&lt;/p&gt;
+&lt;p&gt;But in traditional notation, math text always goes in a line, and can&amp;rsquo;t rotate or rearrange itself. It&amp;rsquo;s like the decorations are still there, but hidden, and always point in one direction, aligned with the surrounding text.&lt;/p&gt;
+&lt;p&gt;[understanding_trad_notation]&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s mainly a matter of personal taste whether you want to label the endpoints of a relation by names, or by position. As a programmer, I prefer labeling by name rather than by position &amp;ndash; I think it&amp;rsquo;s usually clearer &amp;ndash; but it does take up more room, and take longer to write.&lt;/p&gt;
+&lt;h2 id=&#34;more-variables&#34;&gt;More variables&lt;/h2&gt;
+&lt;p&gt;A brief side note: relations extend naturally to more than two variables.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[higher_order_relations_matrix]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Some of the visualizations fall apart as you add more variables though.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[too_higher_order]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The other ones keep working, and the math still works. (This is what mathematicians are talking about when they mention &amp;ldquo;higher-dimensional space&amp;rdquo;, by the way. Systems of many linked variables, it doesn&amp;rsquo;t have to be physical space.)&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;re going to mostly focus on the two-variable case, since it&amp;rsquo;s traditional. But the higher-dimensional relations will peek through quite a bit.&lt;/p&gt;
+&lt;h1 id=&#34;working-with-relations&#34;&gt;Working with relations&lt;/h1&gt;
+&lt;p&gt;We&amp;rsquo;ve talked a lot about what relations &lt;em&gt;are&lt;/em&gt;, and how to visualize them, but how do we do proper math with them?&lt;/p&gt;
+&lt;p&gt;High-school math focuses on operations (&lt;code&gt;+&lt;/code&gt;, &lt;code&gt;-&lt;/code&gt;, &lt;code&gt;*&lt;/code&gt;, &lt;code&gt;/&lt;/code&gt;) and relationships (&lt;code&gt;=&lt;/code&gt;, &lt;code&gt;&amp;lt;&lt;/code&gt;) between numbers. We&amp;rsquo;re going to instead focus on operations and relationships between relations. (If you think this is meta, just wait.)&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;implies-implies-implies-implies&#34;&gt;(implies implies) implies (implies)&lt;/h1&gt;
+&lt;p&gt;i&amp;rsquo;ll modus ur ponens..&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;this rule is extremely useful for working mathematicians, but a great challenge for learning mathematicians.&lt;/p&gt;
+&lt;p&gt;If you see&lt;/p&gt;
+&lt;p&gt;(a =&amp;gt; c)&lt;/p&gt;
+&lt;p&gt;and everybody else nods and agrees, &lt;em&gt;you&lt;/em&gt; have to go and figure out what &lt;em&gt;b&lt;/em&gt; was. How did they get there? What are they doing? Nobody can figure this out for you but yourself.&lt;/p&gt;
+&lt;p&gt;The primary skill acquired through mathematical training is the ability to fill in gaping holes in proofs. For the uninitiated, mathematics will seem to be much more hole than proof. It&amp;rsquo;s all cross-references and citations, seemingly unanchored from the world.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>The Only Algorithm for Hard Problems: Shake and Pull Gently</title>
+      <link>https://kazimuth.github.io/blog/beta/post/shake-and-pull-gently/</link>
+      <pubDate>Fri, 01 Jul 2022 18:14:54 -0400</pubDate>
+      
+      <guid>https://kazimuth.github.io/blog/beta/post/shake-and-pull-gently/</guid>
+      
+      <description>&lt;p&gt;&lt;strong&gt;(Or, &amp;ldquo;regularized greedy algorithms and their applications.&amp;rdquo;)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;James Gilles&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Algorithm&amp;rdquo; is one of those words that sounds fancier than it really deserves. We hear all the time about the &amp;ldquo;facebook algorithm&amp;rdquo;, the &amp;ldquo;youtube algorithm&amp;rdquo;, &amp;ldquo;high frequency trading algorithms&amp;rdquo;, &amp;ldquo;artificial intelligence algorithms&amp;rdquo;, and so on. What are these, really?&lt;/p&gt;
+&lt;p&gt;The &amp;ldquo;facebook algorithm&amp;rdquo; is a large blob of software that Facebook uses to try to get people to stay on their website longer. It&amp;rsquo;s a complicated and expensive machine designed to extract user data and sell ads. All the social media &amp;ldquo;algorithms&amp;rdquo; boil down to that. Money making machines, based on a lot of loose guesses and elbow grease.&lt;/p&gt;
+&lt;p&gt;A broader meaning of &amp;ldquo;algorithm&amp;rdquo; is &amp;ldquo;detailed strategy to accomplish something.&amp;rdquo; There&amp;rsquo;s a whole field of study dedicated to analyzing such things mathematically (computer science), but you don&amp;rsquo;t have to learn math to study them. In fact, they abound in everyday life. Everybody&amp;rsquo;s got their own collection of algorithms. How do you crack your eggs, sort your books, tie your shoelaces?&lt;/p&gt;
+&lt;p&gt;I recently came across a particularly lovely everyday algorithm. &lt;a href=&#34;https://www.youtube.com/watch?v=Lq-Y7crQo44&#34;&gt;This youtube video&lt;/a&gt; gives the following strategy for untangling headphone wires:&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+    Shake and pull gently.
+&lt;/div&gt;
+&lt;p&gt;You might not believe that this works, so here&amp;rsquo;s a video of me trying it:&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+    &lt;video width=&#34;320&#34; height=&#34;240&#34; controls async&gt;
+        &lt;source src=&#34;assets/correct.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+&lt;p&gt;Like magic, they unfurl.
+There is some care involved, though. If you pull too hard, you can knot them up worse:&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+    &lt;video width=&#34;320&#34; height=&#34;240&#34; controls async&gt;
+        &lt;source src=&#34;assets/pull.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+&lt;p&gt;And if you shake without pulling, you won&amp;rsquo;t accomplish much:&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+    &lt;video width=&#34;320&#34; height=&#34;240&#34; controls async&gt;
+        &lt;source src=&#34;assets/shake.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+&lt;p&gt;But when you do both at the same time, in the right ratio, it works surprisingly well. What&amp;rsquo;s going on here? How can such a simple approach yield such good results?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s study the ingredients. What does the pulling do? I would say that the pulling &lt;em&gt;encourages the system to stretch out&lt;/em&gt;. (By &amp;ldquo;system&amp;rdquo; I just mean &amp;ldquo;headphones&amp;rdquo;.)&lt;/p&gt;
+&lt;p&gt;What does this have to do with untangling? Well, tangles keep the system from stretching out fully. For the system to be as stretched out as you can get, you need to get rid of the tangles. But we can&amp;rsquo;t be too direct about it. Simply pulling on the wires knots them into a tight ball, and we get stuck.&lt;/p&gt;
+&lt;p&gt;How do we avoid getting knotted up? Shaking as we pull does something interesting. It encourages the system to explore more possibilities, by giving the wires motion and energy &amp;ndash; lives of their own. Lively wires are less inclined to get knotted up. I think of them as being &lt;em&gt;slipperier&lt;/em&gt; or &lt;em&gt;blurrier&lt;/em&gt;. In a thermodynamic sense, you could say that they&amp;rsquo;re &lt;em&gt;hotter&lt;/em&gt; &amp;ndash; that is, they have a lot of diffuse kinetic energy &amp;ndash; that is, they&amp;rsquo;re wiggling around.&lt;/p&gt;
+&lt;p&gt;Each second, each wiggling wire explores many different configurations. Where two motionless wires tend to get knotted up, two moving wires are more likely to find a configuration that allows them to slip past each other. This added flexibility allows the system to slip past sticking points, on its way to being fully stretched out.&lt;/p&gt;
+&lt;p&gt;Interesting enough. So what?&lt;/p&gt;
+&lt;p&gt;This idea &amp;ndash; gently pulling a system in some direction, while adding in random shaking or smoothing &amp;ndash; actually underlies many computer algorithms as well. That video I linked earlier does a great job of explaining this metaphor for one particular problem. But it&amp;rsquo;s actually really broadly applicable, and I wanted to riff on it a while.&lt;/p&gt;
+&lt;p&gt;In particular, it&amp;rsquo;s broadly applicable to algorithms that solve &amp;ldquo;hard&amp;rdquo; problems. What does &amp;ldquo;hard&amp;rdquo; mean? Computer science has many different mathematical models for studying and comparing computations &amp;ndash; asking questions like, &amp;ldquo;if you increase the amount of input data, how much more time do you need to solve it?&amp;rdquo; For easy problems, you don&amp;rsquo;t need much extra time; for hard problems, you need lots of extra time.&lt;/p&gt;
+&lt;p&gt;Some examples of easy problems are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sorting lists of numbers&lt;/li&gt;
+&lt;li&gt;Searching through sorted tables of data&lt;/li&gt;
+&lt;li&gt;Finding paths through road maps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some examples of hard problems are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Laying out circuits to minimize production costs&lt;/li&gt;
+&lt;li&gt;Training neural networks (&amp;ldquo;AIs&amp;rdquo;) to recognize images&lt;/li&gt;
+&lt;li&gt;Solving logic puzzles with thousands of variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ignoring the mathematical models, my rough rule of thumb is that &amp;ldquo;easy&amp;rdquo; problems generally take a fraction of a second on a modern computer, where &amp;ldquo;hard&amp;rdquo; problems take hours or days. But there are more differences than mere time and space.&lt;/p&gt;
+&lt;p&gt;See, you start your computer science degree with an Algorithms 101 class, which is about techniques for solving easy problems. These techniques have a generally &lt;em&gt;reductionist&lt;/em&gt; flavor. Given a problem, you break the problem into parts, solve each part separately, and then combine the solutions.&lt;/p&gt;
+&lt;p&gt;(&lt;a href=&#34;https://en.wikipedia.org/wiki/Merge_sort&#34;&gt;Merge sort&lt;/a&gt; comes to mind:&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+&lt;img alt=&#34;merge sort diagram&#34; src=&#34;assets/mergesort.gif&#34;&gt;
+&lt;/div&gt;
+&lt;p&gt;The basic idea is that you can combine two sorted lists of numbers by comparing the elements at the front and pulling off the smaller one. This gives you a sorted list of all the elements in both lists. This algorithm is called &amp;ldquo;merge&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;But if we start with an entirely unsorted list, how can we find sorted lists? Simple, break it into single elements, which are &amp;ldquo;sorted&amp;rdquo;, and then repeatedly apply &amp;ldquo;merge&amp;rdquo; to build up bigger and bigger runs of sorted numbers.)&lt;/p&gt;
+&lt;p&gt;I find understanding this sort of algorithm very satisfying. It gives me a feeling of power, like I&amp;rsquo;m designing a factory production line, and know precisely what each machine involved has to do.&lt;/p&gt;
+&lt;p&gt;But when you get out of algorithms 101, you quickly run into problems where this sort of approach isn&amp;rsquo;t possible. These problems are more than the sums of their parts &amp;ndash; different parts of the system interact with each other, and you can&amp;rsquo;t study them in isolation anymore.&lt;/p&gt;
+&lt;p&gt;For example, laying out circuits. For very complicated circuits like CPUs, engineers don&amp;rsquo;t typically start by designing a physical layout of the circuit. Instead, they just specify components and their connections by name; component A links to component B which links to component D, there is a batch of component E&amp;rsquo;s connected to each other in a daisy chain, etc. (This is usually done in a &lt;a href=&#34;https://en.wikipedia.org/wiki/Hardware_description_language&#34;&gt;hardware description language&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;The problem is to pick locations for components, and then connect them with wiring, while minimizing how much space the wiring takes up (since circuit space is expensive.) This is called &lt;a href=&#34;https://en.wikipedia.org/wiki/Place_and_route&#34;&gt;Place and Route&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But this sort of problem isn&amp;rsquo;t amenable to reductionist solutions. You can&amp;rsquo;t divide the circuit into chunks, lay them out in efficient ways indidually, and then link them together &amp;ndash; because the cross links take up space too, but you might not have left room for them! Maybe you bump some of your old links out of the way &amp;ndash; but oops, now they&amp;rsquo;re intruding on space that was used for something else! And so on.&lt;/p&gt;
+&lt;p&gt;You can&amp;rsquo;t solve the problem in parts; you have to solve it &lt;em&gt;all at once&lt;/em&gt;, because its parts are all tangled up. But how can we possibly do such a thing?&lt;/p&gt;
+&lt;p&gt;The answer, of course, is &amp;ldquo;shake and pull gently&amp;rdquo;. You start by making a very bad layout that takes up way, way more space than it needs; this is relatively easy to do. Then, you randomly wiggle the wires of your design, while pulling them tight to take up less space. You do this for a while, slowly decreasing your wiggling and increasing your pulling, and you stop when the circuit is small enough to satisfy you.&lt;/p&gt;
+&lt;p&gt;This algorithm is called &lt;a href=&#34;https://en.wikipedia.org/wiki/Simulated_annealing&#34;&gt;simulated annealing&lt;/a&gt;. Here&amp;rsquo;s a graphic of it; in this case it&amp;rsquo;s trying to find the shortest path through all the dots that goes through each dot exactly once:&#39;&lt;/p&gt;
+&lt;div class=&#34;centerer&#34;&gt;
+&lt;img alt=&#34;gif of traveling salesman problem being solved with simulated annealing&#34; src=&#34;assets/TSPSA.gif&#34;&gt;
+&lt;/div&gt;
+&lt;p&gt;You may notice that this example is not moving smoothly, like headphone wires, but instead is proceeding in discrete jumps. Simulated annealing for circuits is similar: Circuit wires are often constrained to be laid out on a grid, and can&amp;rsquo;t move smoothly. So instead, you apply small random jumps, moving bits of wire from one grid corner to another. This acts as &amp;ldquo;shaking&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Also, before you do any jump, you ask: will this improve or worsen the cost of the the chip? If the answer is &amp;ldquo;improve&amp;rdquo;, you do the jump; but if the answer is &amp;ldquo;worsen&amp;rdquo;, you don&amp;rsquo;t always reject it. Instead, you flip a coin. On heads, you do the jump anyway. That is, you sometimes accept &amp;ldquo;bad&amp;rdquo; random jumps, which make the chip more expensive.&lt;/p&gt;
+&lt;p&gt;This might seem counter-productive, but it&amp;rsquo;s how we implement &amp;ldquo;shake and pull gently&amp;rdquo; in a non-bendy setting. If you never accepted bad jumps, it would be like pulling your headphone without shaking: all the &amp;ldquo;good&amp;rdquo; jumps would quickly get applied. But then there might be many more improvements available, just not immediately.&lt;/p&gt;
+&lt;p&gt;Accepting bad random jumps encourages the system to explore many more possibilities. But we&amp;rsquo;re still weighting the dice, so to speak; good jumps are more likely to be applied than bad. So the system tends to drift in a good &amp;ndash; less expensive &amp;ndash; direction.&lt;/p&gt;
+&lt;p&gt;The algorithm is called &amp;ldquo;simulated annealing&amp;rdquo; because you typically start with a high bad-accept chance and then lower it over time. &amp;ldquo;Annealing&amp;rdquo; is a process where you heat slowly and cool metal to harden it. A high bad-accept chance is like a high temperature, because it induces more random motion; a low bad-accept chance is like a low temperature, because it doesn&amp;rsquo;t. By heating the system hot and slowly cooling it, you encourage it to loosen up and then slowly converge to a good solution.&lt;/p&gt;
+&lt;p&gt;You might notice that this is by no means guaranteed to actually work &amp;ndash; that is, find a solution you like. It could just get stuck, spit out something worse than you put into it. This is something I was very uncomfortable with when I started studying hard problems: if there&amp;rsquo;s no guarantee it&amp;rsquo;ll work, how can you trust your algorithm?&lt;/p&gt;
+&lt;p&gt;This is a general theme in hard problems. Solving them is less like designing a factory and more like baking: you have to know your ingredients well, and combine them correctly; but after a certain point, all you can do is wait and pray.&lt;/p&gt;
+&lt;p&gt;Broadly speaking, there are far too many possible solutions to check if any given answer is the absolute best answer. You can only compare your solution with other, &amp;ldquo;nearby&amp;rdquo; solutions (e.g. solutions a single jump away). So instead of asking, &amp;ldquo;is this the best possible answer?&amp;rdquo;, you simply ask, &amp;ldquo;is this answer good enough?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;And in fact, in practice, the answer often is good enough. This approach is used to lay out many of the hyper-complex computer chips we use every day. And, if you squint, you can see the bones of this algorithm in many other hard problems. I&amp;rsquo;ll run through a quick battery of examples. (I&amp;rsquo;m going to skimp on intuitive explanation here, because when I tried to explain each of these in detail it added a few thousand words to the article, and nobody has time for that&amp;hellip; I&amp;rsquo;ll probably come back and talk about deep neural networks more in a later post. They&amp;rsquo;re near and dear to my heart, like a clogged artery.)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deep neural networks, trained to imitate a dataset with &lt;a href=&#34;https://en.wikipedia.org/wiki/Stochastic_gradient_descent&#34;&gt;stochastic gradient descent&lt;/a&gt;: &amp;ldquo;gradient descent&amp;rdquo; involves &amp;ldquo;pulling&amp;rdquo; on the tuning parameters of a statistical model to make them approximate some dataset. &amp;ldquo;Stochastic&amp;rdquo; gradient descent involves randomly sampling sub-chunks of the dataset to approximate at a time. This random sampling acts like &amp;ldquo;shaking&amp;rdquo;, and the gradient descent part acts like &amp;ldquo;pulling&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Genetic algorithms: often used to explain deep neural networks, although they aren&amp;rsquo;t  actually used much anymore. But the analogy is close enough: genetic algorithms are like a slightly more complex version of simulated annealing, with a population of candidate solutions being randomly mutated instead of just a single one. (You could argue that biological evolution is a &amp;ldquo;shake and pull gently&amp;rdquo; algorithm, but I&amp;rsquo;m not sure I&amp;rsquo;d agree; biological evolution doesn&amp;rsquo;t actually have a goal, it&amp;rsquo;s just that whatever reproduces, reproduces, and whatever doesn&amp;rsquo;t, doesn&amp;rsquo;t&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;SAT / SMT solvers: Maybe calling backtracking search &amp;ldquo;shake and pull gently&amp;rdquo; is pushing it, since there isn&amp;rsquo;t any explicit randomness involved, but I think the analogy still works; you just have to view exhaustive search as a generalized form of random sampling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(Actually you can &lt;a href=&#34;https://arxiv.org/abs/2109.14119&#34;&gt;do without random sampling&lt;/a&gt; in neural networks as well, but you have to add in other ingredients that approximate its smoothing effects. So what matters more than the random shaking &lt;em&gt;itself&lt;/em&gt; is how the random shaking smooths and simplifies the problem. You could call it a &amp;ldquo;good rule of thumb for making the problem more regular&amp;rdquo;; machine learning experts call such things &amp;ldquo;regularization heuristics&amp;rdquo;, because if you don&amp;rsquo;t use long words you can&amp;rsquo;t get research funding.)&lt;/p&gt;
+&lt;p&gt;By the way, a &amp;ldquo;greedy algorithm&amp;rdquo; is just an algorithm that blindly makes small improvements to a solution without thinking very hard about them. The byline of this post was &amp;ldquo;regularized greedy algorithms and their applications&amp;rdquo;; now we can say what a &amp;ldquo;regularized greedy algorithm&amp;rdquo; actually is. It&amp;rsquo;s an &amp;ldquo;algorithm that blindly moves in a direction while trying not to get stuck.&amp;rdquo; Or, more simply, &amp;ldquo;pull and shake gently&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Stated so bluntly, maybe it&amp;rsquo;s obvious why such things have broad applications. Did this really deserve a whole 2000-word post? Well, here we are.&lt;/p&gt;
+&lt;p&gt;I hope this helps demystify &amp;ldquo;algorithms&amp;rdquo;; whenever you see a headline about &amp;ldquo;algorithms&amp;rdquo;, there&amp;rsquo;s a good chance it boils down to &amp;ldquo;shake and pull gently&amp;rdquo;. It may be worth questioning whether we should trust &amp;ldquo;shake and pull gently&amp;rdquo; to select what news stories we read, whether we receive home loans, or whether we are drone striked as a terrorists. Especially when the &amp;ldquo;pull gently&amp;rdquo; part of the algorithm is attempting to optimize the profits of Facebook, Wells Fargo, or Raytheon, respectively.&lt;/p&gt;
+&lt;p&gt; 
+ &lt;/p&gt;
+&lt;p&gt;Postscript:&lt;/p&gt;
+&lt;p&gt;It occurs to me that there&amp;rsquo;s something I oughtta admit. It actually took me a bunch of tries to get that shot of the headphones coming untied. Most of the times I tried it didn&amp;rsquo;t work, or only worked partially, leaving me with some knots to undo by hand. Even if I can describe the technique in a simple way, actually applying it takes practice and skill.&lt;/p&gt;
+&lt;p&gt;That applies to all the algorithms I&amp;rsquo;ve talked about here. Neural networks, SMT solvers, Place &amp;amp; Route engines; none of these things are straightforward. The devil is in the details, and getting to know such details can be a life&amp;rsquo;s work. I don&amp;rsquo;t want to denigrate that work; just point out some shared themes.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>
