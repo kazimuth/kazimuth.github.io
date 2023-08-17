@@ -88,6 +88,7 @@ body {
 
     font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino, serif;
     font-size: 22px;
+    font-smooth: always;
 }
 
 
@@ -207,11 +208,4 @@ time {
 
 #footer>.footnote {
     text-align: center;
-}
-
-.centerer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
 }
