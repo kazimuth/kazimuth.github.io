@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+  <meta name="author" content="James Gilles">
+
+  
+  
+  <meta name="description" content="Intro This post is about three types of diagram: These look different, but they&rsquo;re really just different ways to convey the same information. We&rsquo;ll learn how to convert back and forth between them, which is a handy skill if you spot them in the wild. There&rsquo;s a fancy name for these diagrams. If you want to impress people, you can call them all Binary Relation Diagrams. You could also just">
+  
+
+  
+  <link rel="icon" href="https://kazimuth.github.io/blog/favicon.ico">
+
+  
+  
+  <meta name="keywords" content=" i_hate_seo ">
+  
+
+  
+  
+
+  
+  <meta property="og:title" content="Three Ways to Draw Data Tables" />
+<meta property="og:description" content="Intro This post is about three types of diagram: These look different, but they&rsquo;re really just different ways to convey the same information. We&rsquo;ll learn how to convert back and forth between them, which is a handy skill if you spot them in the wild. There&rsquo;s a fancy name for these diagrams. If you want to impress people, you can call them all Binary Relation Diagrams. You could also just" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kazimuth.github.io/blog/post/three-ways-to-draw-tables/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-08-22T18:14:54-04:00" />
+<meta property="article:modified_time" content="2023-08-22T18:14:54-04:00" />
+
+
+  
+  <link rel="canonical" href="https://kazimuth.github.io/blog/post/three-ways-to-draw-tables/">
+
+  
+  
+  <meta itemprop="name" content="Three Ways to Draw Data Tables">
+<meta itemprop="description" content="Intro This post is about three types of diagram: These look different, but they&rsquo;re really just different ways to convey the same information. We&rsquo;ll learn how to convert back and forth between them, which is a handy skill if you spot them in the wild. There&rsquo;s a fancy name for these diagrams. If you want to impress people, you can call them all Binary Relation Diagrams. You could also just"><meta itemprop="datePublished" content="2023-08-22T18:14:54-04:00" />
+<meta itemprop="dateModified" content="2023-08-22T18:14:54-04:00" />
+<meta itemprop="wordCount" content="2845">
+<meta itemprop="keywords" content="" />
+
+  
+  <link media="screen" rel="stylesheet" href='https://kazimuth.github.io/blog/css/common.css'>
+  <link media="screen" rel="stylesheet" href='https://kazimuth.github.io/blog/css/content.css'>
+
+  
+  
+  <title>Three Ways to Draw Data Tables - james&#39;s web log</title>
+  
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Three Ways to Draw Data Tables"/>
+<meta name="twitter:description" content="Intro This post is about three types of diagram: These look different, but they&rsquo;re really just different ways to convey the same information. We&rsquo;ll learn how to convert back and forth between them, which is a handy skill if you spot them in the wild. There&rsquo;s a fancy name for these diagrams. If you want to impress people, you can call them all Binary Relation Diagrams. You could also just"/>
+
+
+  
+<link rel="stylesheet" href='https://kazimuth.github.io/blog/css/single.css'>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header id="header">
+  <h1>
+    <a href="https://kazimuth.github.io/blog/">james&#39;s web log</a>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/blog/post/">Posts</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/blog/about/">About</a>
+    </span>
+    
+  </nav>
+</header>
+
+    
+<main id="main" class="post">
+  
+  
+  <h1>Three Ways to Draw Data Tables</h1>
+  
+  
+  <article class="content">
+    
+    <h2 id="intro">Intro</h2>
+<!--
+> The universe is not veiled; all its activities lie open.
+>
+> &emsp; &mdash; [圓悟克勤](https://en.wikipedia.org/wiki/Yuanwu_Keqin)
+-->
+<p>This post is about three types of diagram:</p>
+<div class="centerer">
+<img src="assets/Three_Diagrams.svg" width="600pt">
+</div>
+<p>These look different, but they&rsquo;re really just different ways to convey the same information. We&rsquo;ll learn how to convert back and forth between them, which is a handy skill if you spot them in the wild.</p>
+<p>There&rsquo;s a fancy name for these diagrams. If you want to impress people, you can call them all <span class="introvocab">Binary Relation Diagrams</span>. You could also just call them <span class="introvocab">Relations</span>. (I&rsquo;ll be saying <span class="introvocab">Relations</span> a lot, because I want to save the word &ldquo;Table&rdquo; specifically for the middle diagram type.)</p>
+<p>This post is the first in a series. The series will be about relations, and also about a special kind of relation called a <span class="introvocab">Function</span>. My overall goal is to convince you that <em>functions look like this</em>:</p>
+<div class="centerer">
+<img alt="A diagram with some balls on the left and squares on the right. The balls and squares are grouped into highlighted regions. Each region contains multiple balls, but only one square. All balls are contained in a region, but some squares are on their own." src="assets/Functions.drawio.svg" width="324pt" height="324pt">
+</div>
+<p>Later in the series, we&rsquo;ll talk about connections between diagrams, math, programming, and databases. We&rsquo;ll see how these different fields study similar subject matter in very different ways, and learn how to translate between them.</p>
+<p>(Don&rsquo;t worry though. This post is standalone, and it won&rsquo;t have any math in it. Only pictures :)</p>
+<!--
+People think math is boring and hard to understand. They're right, but I wish they weren't.
+
+The thing is, math is *basically* just a pen-and-paper board game. The rules of math are carefully designed to simulate the real world. It's not magic.
+
+But people don't usually get taught *why* math works the way it does, at least until they get to college. In school, you just get handed a bunch of rules to memorize. I don't know about you, but I can't learn that way.
+
+There's a number of people working on making friendly and intuitive math resources ([[1]](https://www.youtube.com/watch?v=cDofhN-RJqg&list=PLRq5rHXCLP_uFOJrIYGpaKs8uj2OMpqjt) [[2]](https://betterexplained.com/archives/) [[3]](https://graphicallinearalgebra.net/) [[4]](https://archive.org/details/the-visual-display-of-quantitative-information-2ed-by-tufte-edward-r.-z-lib.org)). I think these resources are especially needed for "pure", "professional" math. Professional math seems scary, but that's just because it usually isn't explained very well. It's a big board game! Among other things.
+
+We'll get an intuitive understanding of what this means, and learn how to *prove* it -- how to use it as a strategy in the game of formal math, if a pro mathematician challenges you to a duel.
+
+Let's begin.
+-->
+<h2 id="the-nitty-gritty">The Nitty Gritty</h2>
+<p>Let&rsquo;s go through our three ways to draw relation diagrams.</p>
+<!-- First, we need to define our playing pieces. The most basic piece we'll use is called a <span class="introvocab">binary relation</span>. Instead of starting with strict, by-the-book rules, let's keep it relaxed, and try to get a general sense of what relations look like. There are multiple ways to draw them, but they're all connected. -->
+<h3 id="diagram-type-one-directed-graphs">Diagram type one: Directed Graphs</h3>
+<p>Our first kind of diagram is my favorite. It&rsquo;s called a &ldquo;directed graph&rdquo;, or <span class="introvocab">digraph</span>, and it looks like this:</p>
+<!-- SCALE: drawio 1in -> 108pt --> 
+<div class="centerer">
+<img alt="Circles labeled 1,2,3,4. There are arrows going 1 to 2, 1 to 3, 3 to 4, 4 to 1" src="assets/R_Graph1.svg" width="324pt" height="324pt">
+</div>
+<p>A digraph is a collection of <span class="introvocab">nodes</span> &ndash; labeled circles &ndash; and a collection of <span class="introvocab">edges</span> &ndash; little arrows going between the nodes. We can model all sorts of situations with digraphs. For instance, a family tree can be represented as a digraph. We draw a node for each person, then draw edges from parents to children:</p>
+<div class="centerer">
+<img alt="Circles labeled Cindy,Felix,Ray,Eileen,Rob,Louise,Jim,Mac. There are arrows going Cindy to Rob, Felix to Rob, Ray to Louise, Eileen to Louise, Rob to Jim, Rob to Mac, Louise to Jim, Louise to Mac" width="432pt" src="assets/Family_Digraph_1.svg">
+</div>
+<p>We can also draw digraphs of love triangles, by drawing edges from people to people they like:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Love Triangles.svg" width="756pt">
+</div>
+<p>Notice that nodes are allowed to have edges to themselves. Also, nodes don&rsquo;t have to have any edges. In the &ldquo;Romantic Comedy&rdquo; example, C is a sidekick who&rsquo;s not interested in A or B.</p>
+<p>(At least, that&rsquo;s one way to interpret the diagram. It doesn&rsquo;t really say anything besides who likes who.)</p>
+<p>Relations don&rsquo;t have to be about relationships between people. For example, we could draw a digraph of which classes use which books in a school:</p>
+<div class="centerer">
+<img alt="TODO" class="extrapad" src="assets/Classes_Regular_Arrows.drawio.svg" width="648pt">
+</div>
+<p>Notice how this digraph is divided into two parts &ndash; the classes and the books. All the edges go from classes to books. Digraphs like this are called <span class="introvocab">bipartite</span>, which means &ldquo;two parts&rdquo;.</p>
+<p>We don&rsquo;t have to use arrows to draw our digraph edges. We can use any shape we want, as long as the ends look different. For instance, we could use different colored circles:</p>
+<div class="centerer">
+<img alt="TODO" class="extrapad" src="assets/Classes_Multi_Arrows.drawio.svg" width="648pt">
+</div>
+<p>Or even add text labels:</p>
+<div class="centerer">
+<img alt="TODO" class="extrapad" src="assets/Classes_Multi_Arrows_2.drawio.svg" width="648pt">
+</div>
+<p>I like this because it&rsquo;s very clear what the edges mean. It&rsquo;s a lot of work to add all the labels though.
+We can compromise by adding a legend:</p>
+<div class="centerer">
+<img alt="TODO" class="extrapad" src="assets/Classes_Multi_Arrows_Legend.drawio.svg" width="648pt">
+</div>
+<p>Now that we&rsquo;ve added legends, it&rsquo;s very easy to convert to our next way to draw relations: tables.</p>
+<h3 id="diagram-type-two-two-column-tables">Diagram Type Two: Two-Column Tables</h3>
+<p>Here&rsquo;s the class-book relation, redrawn as a <span class="introvocab">Two-Column Table</span>. We use the labels from the legend as column titles.</p>
+<div class="centerer">
+    <table class="diagramtable">
+        <thead>
+            <tr><th class="left">class</th><th class="right">book</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>English Lit 101</td><td>Hamlet</td></tr>
+            <tr><td>English Lit 101</td><td>Moby Dick</td></tr>
+            <tr><td>Whaling 101</td><td>Moby Dick</td></tr>
+            <tr><td>Math 203</td><td>The Calculus Reader</td></tr>
+            <tr><td>Astronomy 101</td><td>The Planetary System</td></tr>
+        </tbody>
+    </table>
+</div>
+<p>This is less exciting, but more orderly.</p>
+<p>We can also convert our other graphs into tables. For instance we can take the &ldquo;Coveting&rdquo; graph from before, add a legend, and convert it to a table:</p>
+<div class="center-sequence">
+<img alt="TODO" src="assets/Coveting_Legend.svg" class="opaque" width="250pt" height="250pt">
+<div class="center-sequence-fence-post">↦</div>
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+            <tr><td>C</td><td>B</td></tr>
+        </tbody>
+    </table>
+</div>
+<p>Look at this for a minute to make sure you understand the translation.
+If it helps, you can compare the &ldquo;Pining&rdquo; graph:</p>
+<div class="center-sequence">
+<img alt="TODO" src="assets/Pining_Legend.svg" class="opaque" width="250pt" height="250pt">
+<div class="center-sequence-fence-post">↦</div>
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+            <tr><td>B</td><td>C</td></tr>
+        </tbody>
+    </table>
+</div>
+<p>Notice how the last row swaps direction, just like the last edge swaps direction.</p>
+<p>There&rsquo;s one more way to draw relations&hellip;</p>
+<h3 id="diagram-type-three-2d-plots">Diagram Type Three: 2D Plots</h3>
+<p>This diagram type makes better use of 2D space. Here&rsquo;s the Coveting relation again, now drawn as a <span class="introvocab">2D Plot</span>:</p>
+<div class="center-sequence">
+<img alt="TODO" src="assets/Coveting_Legend.svg" class="opaque" width="250pt" height="250pt">
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+            <tr><td>C</td><td>B</td></tr>
+        </tbody>
+    </table>
+<table class="twodplot">
+        <tbody>
+            <tr><th rowspan="3" class="right">likes</th>
+                <th class="right">A</th>
+                    <td><div class="square"></div></td>
+                    <td class="selected"><div class="square">X</div></td>
+                    <td><div class="square"></div></td>
+            </tr>
+            <tr>
+                <th class="right">B</th>
+                    <td class="selected"><div class="square">X</div></td>
+                    <td><div class="square"></div></td>
+                    <td class="selected"><div class="square">X</div></td>
+            </tr>   
+            <tr>
+                <th class="right">C</th>
+                    <td><div class="square"></div></td>
+                    <td><div class="square"></div></td>
+                    <td><div class="square"></div></td>
+            </tr>
+            <tr><td class="absent"></td><td class="absent"></td><th class="left">A</th><th class="left">B</th><th class="left">C</th></tr>
+            <tr><td class="absent"></td><td class="absent"></td><th class="left" colspan="3">person</th></tr>
+        </tbody>
+    </table>
+</div>
+<p>You might notice that this diagram type flips the columns around. This is on purpose. It&rsquo;s because positions in a 2D plot are traditionally written <strong>(horizontal, vertical)</strong> or <strong>(x, y)</strong>. Since our relation is <strong>(person, likes)</strong>, I&rsquo;ve laid out the <strong>person</strong> column horizontal and left the <strong>likes</strong> column vertical.</p>
+<p>Compare Coveting with Pining:</p>
+<div class="center-sequence">
+<img alt="TODO" src="assets/Pining_Legend.svg" class="opaque" width="250pt" height="250pt">
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+            <tr><td>B</td><td>C</td></tr>
+        </tbody>
+    </table>
+<table class="twodplot">
+        <tbody>
+            <tr><th rowspan="3" class="right">likes</th>
+                <th class="right">A</th>
+                    <td><div class="square"></div></td>
+                    <td class="selected"><div class="square">X</div></td>
+                    <td><div class="square"></div></td>
+            </tr>
+            <tr>
+                <th class="right">B</th>
+                    <td class="selected"><div class="square">X</div></td>
+                    <td><div class="square"></div></td>
+                    <td><div class="square"></div></td>
+            </tr>   
+            <tr>
+                <th class="right">C</th>
+                    <td><div class="square"></div></td>
+                    <td class="selected"><div class="square">X</div></td>
+                    <td><div class="square"></div></td>
+            </tr>
+            <tr><td class="absent"></td><td class="absent"></td><th class="left">A</th><th class="left">B</th><th class="left">C</th></tr>
+            <tr><td class="absent"></td><td class="absent"></td><th class="left" colspan="3">person</th></tr>
+        </tbody>
+    </table>
+</div>
+<p>Let&rsquo;s apply this to our classes-books relation:</p>
+<div class="center-sequence-column">
+<img alt="TODO" src="assets/Classes_Multi_Arrows_Legend.drawio.svg" class="opaque" width="550pt" height="440pt">
+<div class="center-sequence-fence-post">↦</div>
+<table class="twodplot small">
+        <tbody>
+            <tr><th rowspan="4" class="right">book</th>
+                <th class="right">Hamlet</th>
+                    <td class="onefourth selected"><div class="square">X</div></td>
+                    <td class="onefourth"><div class="square"></div></td>
+                    <td class="onefourth"><div class="square"></div></td>
+                    <td class="onefourth"><div class="square"></div></td>
+            </tr>
+            <tr>
+                <th class="right">Moby Dick</th>
+                    <td class="onefourth selected"><div class="square">X</div></td>
+                    <td class="onefourth selected"><div class="square">X</div></td>
+                    <td class="onefourth"><div class="square"></div></td>
+                    <td class="onefourth"><div class="square"></div></td>
+            </tr>   
+            <tr>
+                <th class="right">The Calculus Reader</th>
+                    <td class="onefourth"><div class="square"></div></td>
+                    <td class="onefourth"><div class="square"></div></td>
+                    <td class="onefourth selected"><div class="square">X</div></td>
+                    <td class="onefourth"><div class="square"></div></td>
+            </tr>
+            <tr>
+                <th class="right">The Planetary System</th>
+                    <td class="onefourth"><div class="square"></div></td>
+                    <td class="onefourth"><div class="square"></div></td>
+                    <td class="onefourth"><div class="square"></div></td>
+                    <td class="onefourth selected"><div class="square">X</div></td>
+            </tr>
+            <tr><td class="absent"></td><td class="absent"></td>
+                <th class="left">English Lit 101</th>
+                <th class="left">Whaling 101</th>
+                <th class="left">Math 101</th>
+                <th class="left">Astronomy 101</th>
+            </tr>
+            <tr><td class="absent"></td><td class="absent"></td><th class="left" colspan="4">class</th></tr>
+        </tbody>
+    </table>
+</div>
+<p>(We&rsquo;ve used a trick here to take up less space. Because the class-books relation is bipartite &ndash; split into classes and books &ndash; we can put only classes on the bottom, and only books on the side. For relations that aren&rsquo;t split up like that, you have to put ALL the nodes on both sides.)</p>
+<h2 id="equivalent-diagrams">Equivalent diagrams</h2>
+<p>We now have three ways to draw relations: <span class="introvocab">Digraphs</span>, <span class="introvocab">Two-Column Tables</span>, and <span class="introvocab">2D Plots</span>.</p>
+<p>I want to convince you that these types of diagrams are <em>equivalent</em>: you can convert between them as needed, without losing information.</p>
+<p>If this post <em>were</em> about math, this is where I would write you a <span class="introvocab">proof</span>. See, to convince each other of things, mathematicians write &ldquo;proofs&rdquo;. A &ldquo;proof&rdquo; is a strategy in a board game. The basic moves in the board game are supposed to be really simple. So simple, that everybody agrees they should be allowed. Bigger strategies are built up out of simple moves. (In this case, the moves would be things like converting between diagrams.)</p>
+<p>I don&rsquo;t want to explain a bunch of formal game rules here &ndash; they can get pretty dry. But I still want to convince you like I&rsquo;d convince a mathematician. See, mathematicians have a high bar to be &ldquo;convinced&rdquo; of things. If you tell them something &ldquo;works&rdquo;, they&rsquo;ll ask <em>how</em> it works. They&rsquo;ll also ask what <span class="introvocab">conditions</span> need to be met for it to work. And usually, they&rsquo;ll want to try it out for themselves.</p>
+<p>We&rsquo;re not doing math here, but we <em>are</em> talking about diagrams. So far I&rsquo;ve been drawing all of them. Why not try drawing some yourself?</p>
+<h4 id="drawing-exercise-1">Drawing Exercise 1</h4>
+<p>I want to convince you that <span class="introvocab">Digraphs</span> and <span class="introvocab">2D Plots</span> contain the same information. This means that if we:</p>
+<ol>
+<li>Start with a <span class="introvocab">Digraph</span></li>
+<li>Convert it to a <span class="introvocab">2D Plot</span></li>
+<li>Convert it <em>back</em> to a <span class="introvocab">Digraph</span></li>
+</ol>
+<p>We should end up back where we started. Let&rsquo;s test this.</p>
+<p>Get a piece of paper. Divide it up into boxes like this:</p>
+<div class="center-sequence">
+<img alt="TODO" src="assets/Exercise_setup.svg" width="500pt">
+</div>
+<p>We&rsquo;ll fill in the top row first.</p>
+<p>In the <strong>Start</strong> box, draw a <span class="introvocab">Digraph</span>. Any digraph you want! For example, you could draw a bit of your family tree, or a love triangle you came up with. For my technique to work, I&rsquo;ll request that you meet these <span class="introvocab">conditions</span>:</p>
+<ul>
+<li>All your nodes have different labels.</li>
+<li>None of your nodes overlap, or cover each other entirely.</li>
+<li>You draw at most one arrow from any start node to any end node.</li>
+</ul>
+<p>(That last <span class="introvocab">condition</span> means that 🅐⇉🅑 isn&rsquo;t allowed, but 🅐⇋🅑 is.)</p>
+<p>Once you&rsquo;ve drawn your digraph, convert it to a <span class="introvocab">2D Plot</span> in the <strong>Middle</strong> box, like this:</p>
+<div class="center-sequence">
+<div class="inner-column">
+    <b>Start</b>
+    <img alt="TODO" src="assets/Pining_Legend.svg" class="opaque" width="250pt" height="250pt">
+</div>
+<div class="center-sequence-fence-post">↦</div>
+<div class="inner-column">
+    <b>Middle</b>
+        <table class="twodplot">
+            <tbody>
+                <tr><th rowspan="3" class="right">likes</th>
+                    <th class="right">A</th>
+                        <td><div class="square"></div></td>
+                        <td class="selected"><div class="square">X</div></td>
+                        <td><div class="square"></div></td>
+                </tr>
+                <tr>
+                    <th class="right">B</th>
+                        <td class="selected"><div class="square">X</div></td>
+                        <td><div class="square"></div></td>
+                        <td><div class="square"></div></td>
+                </tr>   
+                <tr>
+                    <th class="right">C</th>
+                        <td><div class="square"></div></td>
+                        <td class="selected"><div class="square">X</div></td>
+                        <td><div class="square"></div></td>
+                </tr>
+                <tr><td class="absent"></td><td class="absent"></td><th class="left">A</th><th class="left">B</th><th class="left">C</th></tr>
+                <tr><td class="absent"></td><td class="absent"></td><th class="left" colspan="3">person</th></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<p>Now, fold your paper over so that you CAN&rsquo;T SEE the digraph you started from. (If you&rsquo;re following along with a friend, trade papers with them at this point.)</p>
+<p>Now, convert the 2D plot in your <strong>Middle</strong> box back to a digraph in your <strong>End</strong> box. Try drawing the nodes in different places :)</p>
+<div class="center-sequence">
+    <div class="inner-column">
+        <b>Middle</b>
+        <table class="twodplot">
+            <tbody>
+                <tr><th rowspan="3" class="right">likes</th>
+                    <th class="right">A</th>
+                        <td><div class="square"></div></td>
+                        <td class="selected"><div class="square">X</div></td>
+                        <td><div class="square"></div></td>
+                </tr>
+                <tr>
+                    <th class="right">B</th>
+                        <td class="selected"><div class="square">X</div></td>
+                        <td><div class="square"></div></td>
+                        <td><div class="square"></div></td>
+                </tr>   
+                <tr>
+                    <th class="right">C</th>
+                        <td><div class="square"></div></td>
+                        <td class="selected"><div class="square">X</div></td>
+                        <td><div class="square"></div></td>
+                </tr>
+                <tr><td class="absent"></td><td class="absent"></td><th class="left">A</th><th class="left">B</th><th class="left">C</th></tr>
+                <tr><td class="absent"></td><td class="absent"></td><th class="left" colspan="3">person</th></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="center-sequence-fence-post">↦</div>
+    <div class="inner-column">
+        <b>End</b>
+        <img alt="TODO" src="assets/Pining_Legend_Mutant.svg" class="opaque" width="250pt" height="250pt">
+    </div>
+</div>
+<p>Unfold your paper. Now, we can check if the starting digraph is the same as the ending digraph&ndash; oh, wait!</p>
+<p>There&rsquo;s an important rule I haven&rsquo;t explained yet.</p>
+<div class="centerer">
+<p><b>Digraphs are stretchy.</b></p>
+</div>
+<p>This means that no matter how we stretch and rearrange a digraph, as long as we don&rsquo;t add or break any edges, it will still be considered &ldquo;the same digraph&rdquo;. So, for example, all of these would be considered &ldquo;the same&rdquo;:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Three_Same.svg" width="500pt">
+</div>
+<p><em>Keeping in mind</em> that this is what &ldquo;the same&rdquo; means for digraphs, check if your <strong>Start</strong> and <strong>End</strong> boxes are the same.</p>
+<details>
+<summary>If they are the same, click here:</summary>
+<p>Great. You&rsquo;ve completed the exercise.</p>
+<p>This might feel a little anticlimactic. What, we&rsquo;re just back where we started? What was the point of this?</p>
+<p>That&rsquo;s how <em>you</em> feel. Me, I&rsquo;m wiping sweat off my brow. See, I made kinda a big promise back there. I told you that my procedure would work, <em>no matter what</em> digraph you chose. Lucky me, you picked one where it seems to have worked. If you could find one where it didn&rsquo;t work, you would have officially PROVEN ME WRONG.</p>
+<p>Specifically, you&rsquo;d have found a COUNTEREXAMPLE to my claim that my procedure would work for any input. Counterexamples are a time-honored technique for proving over-broad claims wrong. For example:</p>
+<div class="centerer">
+<p><b>Plato:</b> Any featherless biped <i>must</i> be a man.</p>
+</div>
+<div class="centerer">
+<p><b>Diogenes (holding up a plucked chicken):</b> Behold a man!</p>
+</div>
+<p>In modern times, finding a counterexample to somebody&rsquo;s claim means you get to publish a paper making fun of them.</p>
+</details>
+<details>
+<summary>If they aren't the same, click here:</summary>
+<p>There are two possibilities:</p>
+<ol>
+<li>An error happened somewhere.</li>
+<li>I&rsquo;m wrong, and you&rsquo;ve found a counterexample.</li>
+</ol>
+<p>First, we should check for errors. Go over each edge in the <strong>Start</strong> box, make sure it&rsquo;s recorded as a black square in the <strong>Middle</strong> box, and turned back into an edge in the <strong>End</strong> box. You might also want to check that none of the squares in the <strong>Middle</strong> box got filled in black when they shouldn&rsquo;t have been.</p>
+<p>If you can&rsquo;t find any errors, you may have found a genuine counterexample. Please cite me in your refutation paper.</p>
+</details>
+<h4 id="drawing-exercise-2">Drawing Exercise 2</h4>
+<p>We&rsquo;ve just converted a digraph to a 2D plot and back. Can we convert a digraph to a table and back?</p>
+<p>Let&rsquo;s try this in the next row. This time, let me pick our starting diagram. Draw this in the <strong>Start</strong> box:</p>
+<div class="center-sequence">
+<div class="inner-column">
+    <b>Start</b>
+    <img alt="TODO" src="assets/Comedy_Legend.svg" class="opaque" width="250pt" height="250pt">
+</div>
+<div class="center-sequence-fence-post">↦</div>
+</div>
+<p>Now, convert this to a Table in the <strong>Middle</strong> box.</p>
+<p>&hellip;</p>
+<p>Hmm. Wait a minute. What table should we draw here?</p>
+<p>Come up with <em>something</em> and we can compare notes in a sec.</p>
+<p>&hellip;</p>
+<p>Here are some ideas I came up with:</p>
+<div class="center-sequence">
+<div class="inner-column">
+<b>Idea 1</b>
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+        </tbody>
+    </table>
+</div>
+<div class="inner-column">
+    <b>Idea 2</b>
+    <table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+            <tr><td>C</td><td></td></tr>
+        </tbody>
+    </table>
+</div>
+<div class="inner-column">
+    <b>Idea 3</b>
+    <table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+            <tr><td>C</td><td></td></tr>
+            <tr><td></td><td>C</td></tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+<p>The problem is that C doesn&rsquo;t have any edges, so it&rsquo;s not exactly clear how we should record it in the table.</p>
+<p>We&rsquo;ve come to a <strong>design decision</strong>. Let&rsquo;s consider our options.</p>
+<p>I think <strong>Idea 1</strong> is definitely wrong. It&rsquo;s missing information &ndash; if we picked it, our exercise could end up like this:</p>
+<div class="center-sequence">
+<img alt="TODO" src="assets/Comedy_Legend.svg" class="opaque" width="250pt" height="250pt">
+<div class="center-sequence-fence-post">↦</div>
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+        </tbody>
+    </table>
+    <div class="center-sequence-fence-post">↦</div>
+    <img alt="TODO" src="assets/Comedy_Bug.svg" class="opaque" width="250pt" height="250pt">
+</div>
+<p>Because the table is missing information, we don&rsquo;t end up back where we started.</p>
+<p>Of the other two&hellip;</p>
+<div class="center-sequence">
+<div class="inner-column">
+    <b>Idea 2</b>
+    <table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+            <tr><td>C</td><td></td></tr>
+        </tbody>
+    </table>
+</div>
+<div class="inner-column">
+    <b>Idea 3</b>
+    <table class="diagramtable">
+        <thead>
+            <tr><th class="left">person</th><th class="right">likes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+            <tr><td>C</td><td></td></tr>
+            <tr><td></td><td>C</td></tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+<p>I think I like <strong>Idea 3</strong> the most:</p>
+<ul>
+<li><strong>Idea 2</strong> says &ldquo;C doesn&rsquo;t like anybody&rdquo;.</li>
+<li><strong>Idea 3</strong> says &ldquo;C doesn&rsquo;t like anybody, and nobody likes C&rdquo;,</li>
+</ul>
+<p>which is more information. Sorry C.</p>
+<p>Are there other options? Well, yes. There is actually a <strong>Standard Math Answer</strong> to this question. It might seem a little odd at first. Here&rsquo;s what a mathematician would draw:</p>
+<div class="center-sequence">
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">person: People</th><th class="right">likes: People</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>A</td></tr>
+        </tbody>
+</table>
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">People</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td></tr>
+            <tr><td>B</td></tr>
+            <tr><td>C</td></tr>
+        </tbody>
+</table>
+</div>
+<p>We&rsquo;ve split our information into TWO tables. One table lists the nodes (People), and the other lists the edges.</p>
+<p>&ldquo;<strong>person: People</strong>&rdquo; means that every entry in the column &ldquo;<strong>person</strong>&rdquo; has to come from the table &ldquo;<strong>People</strong>&rdquo;. You can also say:</p>
+<ul>
+<li>&ldquo;each person is in the set People&rdquo;</li>
+</ul>
+<p>or</p>
+<ul>
+<li>&ldquo;each person is of type People&rdquo;.</li>
+</ul>
+<p>(This will sound familiar to programmers.)</p>
+<p>We can remix our other running example to show off the same idea:</p>
+<div class="center-sequence-column">
+<img alt="TODO" src="assets/Classes_Barbells_Gym.svg" class="opaque" width="550pt">
+<div class="center-sequence-column-fence-post">↦</div>
+<div class="center-sequence">
+    <table class="diagramtable">
+        <thead>
+            <tr><th class="left">class: Classes</th><th class="right">book: Books</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>English Lit 101</td><td>Hamlet</td></tr>
+            <tr><td>English Lit 101</td><td>Moby Dick</td></tr>
+            <tr><td>Whaling 101</td><td>Moby Dick</td></tr>
+        </tbody>
+    </table>
+</div>
+<div class="center-sequence">
+    <table class="diagramtable">
+        <thead>
+            <tr><th class="left">Classes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>English Lit 101</td></tr>
+            <tr><td>Whaling 101</td></tr>
+            <tr><td>Gym Class</td></tr>
+        </tbody>
+    </table>
+    <table class="diagramtable">
+        <thead>
+            <tr><th class="left">Books</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Hamlet</td></tr>
+            <tr><td>Moby Dick</td></tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<!--(Notice how the columns have DIFFERENT types in this example. The Books table seems kinda redundant here, but that redundancy will turn out to be useful later.)-->  
+<p>Okay, we still need to finish our exercise. What do we put in the Middle box? You actually have a choice here: <strong>Idea 3</strong> and the <strong>Standard Math Answer</strong> will work equally well. Which one you pick comes down to personal preference and who you hang out with.</p>
+<ul>
+<li>Mathematicians usually pick the <strong>Standard Math Answer</strong>.</li>
+<li>Database programmers use <strong>Idea 3</strong>. They call it an <strong>OUTER JOIN</strong>.</li>
+</ul>
+<p>(In capital letters. Database programming started in the 70s, when capital letters were still cool.)</p>
+<p>Once you&rsquo;ve made your choice, finish the exercise like last time. Did you end up back where you started?</p>
+<!-- (Remark: the real world isn't neatly divided into "types". They're just an organizational tool.) -->
+<h2 id="equality--stretchiness">Equality &amp; Stretchiness</h2>
+<p>There&rsquo;s one more thing I want to cover in this post. It&rsquo;s what I said before:</p>
+<div class="centerer">
+<p><b>Digraphs are stretchy.</b></p>
+</div>
+<p>So for instance, we would consider these three digraphs to be the same, because we can rearrange and stretch them into each other:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Three_Same.svg" width="500pt">
+</div>
+<p>To write down that we think two things are the same, we put an equals sign between them:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Three_Equal.svg" width="500pt">
+</div>
+<p>(We could also use a three-directional equal sign:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Threeary_Equal.svg" width="500pt">
+</div>
+<p>But we haven&rsquo;t talked about ternary relations yet.)</p>
+<p>It might seem a little strange to put an equals sign between things that aren&rsquo;t <em>exactly</em> the same. But you actually do this all the time in math. Consider the equation:</p>
+<div class="center-sequence">
+<p class="big">1 + 1</p><div class="center-sequence-fence-post">=</div><p class="big">2</p>
+</div>
+<p>The things on either side of the equal sign here aren&rsquo;t exactly the same &ndash; they&rsquo;re just <em>the same enough for our purposes</em>. You could also think of them as <em>different ways to accomplish the same thing.</em> To get a &ldquo;2&rdquo;, you can take two &ldquo;1&quot;s and add them together, or you can just write down a &ldquo;2&rdquo;.</p>
+<p>In the case of our digraphs, we consider the above diagrams to be <em>different ways to draw the same digraph</em>. Since the digraph is stretchy, it doesn&rsquo;t matter how it&rsquo;s laid out in space.</p>
+<p>We can come up with similar rules for our other diagram types. For example, I declare that our tables are unordered: we agree not to care about the order of the rows. So we can write:</p>
+<div class="center-sequence">
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">person: Person</th><th class="right">likes: Person</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>A</td><td>B</td></tr>
+            <tr><td>B</td><td>C</td></tr>
+        </tbody>
+    </table>
+<div class="center-sequence-fence-post">=</div>
+<table class="diagramtable">
+        <thead>
+            <tr><th class="left">person: Person</th><th class="right">likes: Person</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>B</td><td>C</td></tr>
+            <tr><td>A</td><td>B</td></tr>
+        </tbody>
+    </table>
+</div>
+<p>We now know how to tell when digraphs are the same, and how to tell when tables are the same. What about 2D Plots?</p>
+<h4 id="drawing-exercise-3">Drawing Exercise 3</h4>
+<p>Come up with two 2D plots that look different, but convey the same information. Write an equals sign between them.</p>
+<details>
+<summary>Hint</summary>
+You could rearrange rows, rearrange columns, move a legend to the opposite side, or even turn the whole plot 45 degrees. Nobody can stop you.
+</details>
+<h2 id="conclusion">Conclusion</h2>
+<p>At some point we seem to have slipped into talking about math. My mistake.</p>
+<p>Well, since we&rsquo;re already here, might as well go further. So far we&rsquo;ve only talked about binary relations. What about functions?</p>
+<p>I&rsquo;m not going to formally define them yet, but here&rsquo;s a taste of where we&rsquo;re going. Suppose we have a bunch of number-terms &ndash; things like &ldquo;1 + 1&rdquo;, &ldquo;9 - 6&rdquo;, &ldquo;(5 + 7) / 3&rdquo;:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Terms_Bare.svg" width="250pt">
+</div>
+<p>I like to picture an endless wall of these, stretching off into the distance:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/CircleWall.png" width="700pt">
+</div>
+<p>That&rsquo;s hard to draw though.</p>
+<p>In elementary school, we&rsquo;re taught to <em>evaluate</em> number-terms &ndash; to convert them to <em>values</em>, that is, numbers.</p>
+<p>We can draw this:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Terms_Eval.svg" width="450pt">
+</div>
+<p>There&rsquo;s another way to think about this situation (which becomes more important when you get to algebra). Instead of fully evaluating terms, we just ask whether or not they&rsquo;re equal to each other. This looks like:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Terms_Equal.svg" width="450pt">
+</div>
+<p>(The loops might seem odd, but they&rsquo;re part of how equality is usually defined.)</p>
+<p>Let&rsquo;s combine these pictures:</p>
+<div class="centerer">
+<img alt="TODO" src="assets/Terms_Equal_Eval.svg" width="500pt">
+</div>
+<p>(Ignore the overlapping edges. Really, this oughtta be a 3-dimensional diagram. You could make it with spaghetti and marshmallows&hellip;)</p>
+<p>Now, compare:</p>
+<div class="centerer">
+<img alt="A diagram with some purple balls on the left and orange squares on the right. The balls and squares are grouped into highlighted regions. Each region contains multiple balls, but only one square. All balls are contained in a region, but some squares are on their own." src="assets/Functions.drawio.svg" width="324pt" height="324pt">
+</div>
+<p>This is that vague picture I drew at the beginning. It&rsquo;s what I think a function looks like.</p>
+<p>You might see some connection between these diagrams. The rest of this series will be spent making this connection precise.</p>
+<p>We&rsquo;re going to learn the rules of the board game of math, and how to compose them into proofs. This&rsquo;ll look a lot like what we&rsquo;ve been doing so far, we&rsquo;ll just be more uptight about it. We&rsquo;ll learn about different ways to combine and connect different relations. And we&rsquo;ll learn the definition of a function, and how to unpack it to visualize the rich structure it implies.</p>
+<p>For now, I&rsquo;ll leave you with a parting &ndash;</p>
+<h2 id="exercise">Exercise</h2>
+<p>Flip your paper over. Draw a 2-column table. Rather than trying to come up with a situation, just name the columns &ldquo;a&rdquo; and &ldquo;b&rdquo;, and fill the table with random numbers and letters. Not too many of them, or you&rsquo;ll be here all day.</p>
+<p>Aren&rsquo;t you curious what digraph you&rsquo;ve created? Convert your table to a digraph &ndash; watch it unfold. Try rearranging the nodes to see other forms it might take.</p>
+<p>Also, try drawing it as a 2D plot. Honestly, this will probably just look like TV static, but it&rsquo;s good to practice.</p>
+<p>(If you want more, I&rsquo;ve got another page where we play with <a href="../three-ways-to-draw-tables-bonus">tables with THREE columns</a>. There&rsquo;s also links to further reading.)</p>
+
+    
+  </article>
+  <div class="paginator">
+    
+    <a class="link" href="https://kazimuth.github.io/blog/post/shake-and-pull-gently/">← prev</a>
+    
+    
+    <a class="link" href="https://kazimuth.github.io/blog/post/three-ways-to-draw-tables-bonus/">next →</a>
+    
+  </div>
+  <div class="comment">
+    
+    
+    
+    
+    
+    
+  </div>
+  
+</main>
+
+    <footer id="footer">
+    <div>
+        <span>© 2022</span> - <span>2023</span>
+    </div>
+
+    <div>
+        <span>compiled with: </span>
+        <a class="link" href="https://gohugo.io/">Hugo</a>
+        <span> 🌵 </span>
+        <a class="link" href="https://github.com/queensferryme/hugo-theme-texify">TeXify</a>
+    </div>
+
+    <div class="footnote">
+        <span></span>
+    </div>
+</footer>
+  </div>
+
+  
+  
+
+  
+  
+
+  
+  
+
+</body>
+
+</html>

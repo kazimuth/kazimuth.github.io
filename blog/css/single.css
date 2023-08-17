@@ -1,12 +1,14 @@
-#main > h1 {
+#main>h1 {
     text-align: center;
+    background-color: #FFFFFF;
+    flex: min-content;
 }
 
-#main > .content {
+#main>.content {
     padding-top: 1rem;
 }
 
-#main > .warning {
+#main>.warning {
     background-color: brown;
     color: white;
     font-size: 1.1rem;
@@ -27,7 +29,7 @@
     text-decoration: underline;
 }
 
-#main .toc li > ul {
+#main .toc li>ul {
     margin-left: 1.5rem;
 }
 

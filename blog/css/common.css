@@ -1,5 +1,23 @@
 /* fonts */
+@font-face {
+    font-display: swap;
+    font-family: 'Arapey';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Arapey-Regular.ttf');
+}
 
+@font-face {
+    font-display: swap;
+    font-family: 'Arapey';
+    font-style: italic;
+    font-weight: normal;
+    src: url('../font/Arapey-Italic.ttf');
+}
+
+
+
+/*
 @font-face {
     font-display: swap;
     font-family: 'Latin Modern Mono';
@@ -63,6 +81,17 @@
     font-weight: normal;
     src: url('../font/lmroman-normal.woff');
 }
+*/
+body {
+    background-image: url(../bg3.png);
+    background-attachment: fixed;
+
+    font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino, serif;
+    font-size: 22px;
+    font-smooth: always;
+}
+
+
 
 /* global */
 
@@ -83,14 +112,22 @@ time {
     min-width: 5rem;
 }
 
+@media screen and (min-width: 768px) {
+    #wrapper {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {}
+
 #wrapper {
-    background-color: #FAFAFA;
+    /* background-color: #FAFAFA; */
     display: flex;
     flex-direction: column;
-    font-family: 'Latin Modern Roman', 'Times New Roman', serif;
+    font-family: 'Arapey', serif;
     min-height: 100vh;
     overflow-wrap: break-word;
-    padding: 1rem;
+
 }
 
 .link {
@@ -105,6 +142,7 @@ time {
     justify-content: space-between;
     margin-top: 2rem;
 }
+
 
 ::-webkit-scrollbar {
     background-color: #FAFAFA;
@@ -128,17 +166,18 @@ time {
     flex-direction: column;
 }
 
-#header > h1 {
+#header>h1 {
     text-align: center;
+    background-color: #FFFFFF;
 }
 
 @media screen and (min-width: 768px) {
-    #header > h1 {
+    #header>h1 {
         font-size: 2.8rem;
     }
 }
 
-#header > nav {
+#header>nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -147,8 +186,10 @@ time {
     width: 100%;
 }
 
-#header > nav > span > a {
+#header>nav>span>a {
     font-size: 1.2rem;
+    background-color: #FFFFFF;
+    padding: 0.3rem;
 }
 
 /* main */
@@ -158,9 +199,20 @@ time {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    max-width: 768px;
-    padding: 2rem 0;
-    width: calc(100% - 2rem);
+}
+
+@media screen and (min-width: 768px) {
+    #main {
+        padding: 2rem 0;
+        max-width: 768px;
+        width: calc(100% - 2rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #main {
+        width: calc(100%);
+    }
 }
 
 /* footer */
@@ -169,15 +221,10 @@ time {
     align-items: center;
     display: flex;
     font-size: .9rem;
-    flex-direction: column;;
+    flex-direction: column;
+    ;
 }
 
-#footer > .footnote {
+#footer>.footnote {
     text-align: center;
-}
-
-.centerer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

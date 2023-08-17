@@ -51,7 +51,7 @@ James Gilles
 &ldquo;Algorithm&rdquo; is one of those words that sounds fancier than it really deserves. We hear all the time about the &ldquo;facebook algorithm&rdquo;, the &ldquo;youtube algorithm&rdquo;, &ldquo;high frequency trading algorithms&rdquo;, &ldquo;artificial intelligence algorithms&rdquo;, and so on. What are these, really?
 The &ldquo;facebook algorithm&rdquo; is a large blob of software that Facebook uses to try to get people to stay on their website longer."><meta itemprop="datePublished" content="2022-07-01T18:14:54-04:00" />
 <meta itemprop="dateModified" content="2022-07-01T18:14:54-04:00" />
-<meta itemprop="wordCount" content="2397">
+<meta itemprop="wordCount" content="2384">
 <meta itemprop="keywords" content="" />
 
   
@@ -156,9 +156,9 @@ There is some care involved, though. If you pull too hard, you can knot them up 
 </ul>
 <p>Ignoring the mathematical models, my rough rule of thumb is that &ldquo;easy&rdquo; problems generally take a fraction of a second on a modern computer, where &ldquo;hard&rdquo; problems take hours or days. But there are more differences than mere time and space.</p>
 <p>See, you start your computer science degree with an Algorithms 101 class, which is about techniques for solving easy problems. These techniques have a generally <em>reductionist</em> flavor. Given a problem, you break the problem into parts, solve each part separately, and then combine the solutions.</p>
+<p>(<a href="https://en.wikipedia.org/wiki/Merge_sort">Merge sort</a> comes to mind:</p>
 <div class="centerer">
-([Merge sort](https://en.wikipedia.org/wiki/Merge_sort) comes to mind:
-![merge sort diagram](assets/mergesort.gif)
+<img alt="merge sort diagram" src="assets/mergesort.gif">
 </div>
 <p>The basic idea is that you can combine two sorted lists of numbers by comparing the elements at the front and pulling off the smaller one. This gives you a sorted list of all the elements in both lists. This algorithm is called &ldquo;merge&rdquo;.</p>
 <p>But if we start with an entirely unsorted list, how can we find sorted lists? Simple, break it into single elements, which are &ldquo;sorted&rdquo;, and then repeatedly apply &ldquo;merge&rdquo; to build up bigger and bigger runs of sorted numbers.)</p>
@@ -171,7 +171,7 @@ There is some care involved, though. If you pull too hard, you can knot them up 
 <p>The answer, of course, is &ldquo;shake and pull gently&rdquo;. You start by making a very bad layout that takes up way, way more space than it needs; this is relatively easy to do. Then, you randomly wiggle the wires of your design, while pulling them tight to take up less space. You do this for a while, slowly decreasing your wiggling and increasing your pulling, and you stop when the circuit is small enough to satisfy you.</p>
 <p>This algorithm is called <a href="https://en.wikipedia.org/wiki/Simulated_annealing">simulated annealing</a>. Here&rsquo;s a graphic of it; in this case it&rsquo;s trying to find the shortest path through all the dots that goes through each dot exactly once:'</p>
 <div class="centerer">
-![gif of traveling salesman problem being solved with simulated annealing](assets/TSPSA.gif)
+<img alt="gif of traveling salesman problem being solved with simulated annealing" src="assets/TSPSA.gif">
 </div>
 <p>You may notice that this example is not moving smoothly, like headphone wires, but instead is proceeding in discrete jumps. Simulated annealing for circuits is similar: Circuit wires are often constrained to be laid out on a grid, and can&rsquo;t move smoothly. So instead, you apply small random jumps, moving bits of wire from one grid corner to another. This acts as &ldquo;shaking&rdquo;.</p>
 <p>Also, before you do any jump, you ask: will this improve or worsen the cost of the the chip? If the answer is &ldquo;improve&rdquo;, you do the jump; but if the answer is &ldquo;worsen&rdquo;, you don&rsquo;t always reject it. Instead, you flip a coin. On heads, you do the jump anyway. That is, you sometimes accept &ldquo;bad&rdquo; random jumps, which make the chip more expensive.</p>
@@ -204,7 +204,7 @@ There is some care involved, though. If you pull too hard, you can knot them up 
     <a></a>
     
     
-    <a></a>
+    <a class="link" href="https://kazimuth.github.io/blog/post/three-ways-to-draw-tables/">next →</a>
     
   </div>
   <div class="comment">
@@ -219,22 +219,21 @@ There is some care involved, though. If you pull too hard, you can knot them up 
 </main>
 
     <footer id="footer">
-  <div>
-    <span>© 2022</span> - <span>2023</span>
-  </div>
+    <div>
+        <span>© 2022</span> - <span>2023</span>
+    </div>
 
-  <div>
-    <span>Powered by </span>
-    <a class="link" href="https://gohugo.io/">Hugo</a>
-    <span> 🍦 Theme </span>
-    <a class="link" href="https://github.com/queensferryme/hugo-theme-texify">TeXify</a>
-  </div>
+    <div>
+        <span>compiled with: </span>
+        <a class="link" href="https://gohugo.io/">Hugo</a>
+        <span> 🌵 </span>
+        <a class="link" href="https://github.com/queensferryme/hugo-theme-texify">TeXify</a>
+    </div>
 
-  <div class="footnote">
-    <span></span>
-  </div>
+    <div class="footnote">
+        <span></span>
+    </div>
 </footer>
-
   </div>
 
   
