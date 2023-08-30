@@ -42,7 +42,7 @@
   <meta itemprop="name" content="Three Ways to Draw Data Tables">
 <meta itemprop="description" content="Intro This post is about three types of diagram: These look different, but they&rsquo;re really just different ways to convey the same information. We&rsquo;ll learn how to convert back and forth between them, which is a handy skill if you spot them in the wild. There&rsquo;s a fancy name for these diagrams. If you want to impress people, you can call them all Binary Relation Diagrams. You could also just"><meta itemprop="datePublished" content="2023-08-22T18:14:54-04:00" />
 <meta itemprop="dateModified" content="2023-08-22T18:14:54-04:00" />
-<meta itemprop="wordCount" content="2845">
+<meta itemprop="wordCount" content="2851">
 <meta itemprop="keywords" content="" />
 
   
@@ -361,7 +361,7 @@ If it helps, you can compare the &ldquo;Pining&rdquo; graph:</p>
 <li>None of your nodes overlap, or cover each other entirely.</li>
 <li>You draw at most one arrow from any start node to any end node.</li>
 </ul>
-<p>(That last <span class="introvocab">condition</span> means that 🅐⇉🅑 isn&rsquo;t allowed, but 🅐⇋🅑 is.)</p>
+<p>(That last condition means that 🅐⇉🅑 isn&rsquo;t allowed, but 🅐⇋🅑 is.)</p>
 <p>Once you&rsquo;ve drawn your digraph, convert it to a <span class="introvocab">2D Plot</span> in the <strong>Middle</strong> box, like this:</p>
 <div class="center-sequence">
 <div class="inner-column">
@@ -714,7 +714,7 @@ You could rearrange rows, rearrange columns, move a legend to the opposite side,
 <h2 id="conclusion">Conclusion</h2>
 <p>At some point we seem to have slipped into talking about math. My mistake.</p>
 <p>Well, since we&rsquo;re already here, might as well go further. So far we&rsquo;ve only talked about binary relations. What about functions?</p>
-<p>I&rsquo;m not going to formally define them yet, but here&rsquo;s a taste of where we&rsquo;re going. Suppose we have a bunch of number-terms &ndash; things like &ldquo;1 + 1&rdquo;, &ldquo;9 - 6&rdquo;, &ldquo;(5 + 7) / 3&rdquo;:</p>
+<p>I&rsquo;m not going to formally define them yet, but here&rsquo;s a taste of where we&rsquo;re going. Suppose we have a bunch of number-expressions &ndash; things like &ldquo;1 + 1&rdquo;, &ldquo;9 - 6&rdquo;, &ldquo;(5 + 7) / 2&rdquo;:</p>
 <div class="centerer">
 <img alt="TODO" src="assets/Terms_Bare.svg" width="250pt">
 </div>
@@ -723,16 +723,16 @@ You could rearrange rows, rearrange columns, move a legend to the opposite side,
 <img alt="TODO" src="assets/CircleWall.png" width="700pt">
 </div>
 <p>That&rsquo;s hard to draw though.</p>
-<p>In elementary school, we&rsquo;re taught to <em>evaluate</em> number-terms &ndash; to convert them to <em>values</em>, that is, numbers.</p>
+<p>In elementary school, we&rsquo;re taught to <em>evaluate</em> number-expressions &ndash; to convert them to <em>values</em>, that is, numbers.</p>
 <p>We can draw this:</p>
 <div class="centerer">
 <img alt="TODO" src="assets/Terms_Eval.svg" width="450pt">
 </div>
-<p>There&rsquo;s another way to think about this situation (which becomes more important when you get to algebra). Instead of fully evaluating terms, we just ask whether or not they&rsquo;re equal to each other. This looks like:</p>
+<p>There&rsquo;s another way to think about this situation (which becomes more important when you get to algebra). Instead of fully evaluating things, we just ask whether or not they&rsquo;re equal to each other. This looks like:</p>
 <div class="centerer">
 <img alt="TODO" src="assets/Terms_Equal.svg" width="450pt">
 </div>
-<p>(The loops might seem odd, but they&rsquo;re part of how equality is usually defined.)</p>
+<p>(The loops might seem odd, but they&rsquo;re part of how equality is usually defined: 1+1 = 1+1. Expressions equal themselves.)</p>
 <p>Let&rsquo;s combine these pictures:</p>
 <div class="centerer">
 <img alt="TODO" src="assets/Terms_Equal_Eval.svg" width="500pt">
