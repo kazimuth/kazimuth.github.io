@@ -751,10 +751,11 @@ If it helps, you can compare the &amp;ldquo;Pining&amp;rdquo; graph:&lt;/p&gt;
 &lt;div class=&#34;centerer&#34;&gt;
 &lt;img src=&#34;assets/Three_Diagrams_Detailed.svg&#34; width=&#34;700pt&#34;&gt;
 &lt;/div&gt;
-&lt;p&gt;The tildes (~) mean &amp;ldquo;is like&amp;rdquo;, which is pretty vague, so I hope you can see what I mean.
-I think the strangest part of this diagram is the transformation on the left side &amp;ndash; modifying a graph by duplicating nodes.
+&lt;p&gt;The tildes (~) mean &amp;ldquo;is like&amp;rdquo;, which is pretty vague, so I hope you can see what I mean. The ellipsis (&amp;hellip;)
+is because there&amp;rsquo;s some disagreement about how to put disconnected nodes in a table. (There&amp;rsquo;s more on that in the exercises.)&lt;/p&gt;
+&lt;p&gt;I think the strangest part of this diagram is the transformation on the left side &amp;ndash; modifying a graph by duplicating nodes.
 Once you accept that part, the rest is pretty straightforward.&lt;/p&gt;
-&lt;p&gt;(John Von Neumann once said: &amp;ldquo;Young man, in mathematics you don&amp;rsquo;t understand things. You just get used to them.&amp;rdquo;)&lt;/p&gt;
+&lt;p&gt;John Von Neumann once said: &amp;ldquo;Young man, in mathematics you don&amp;rsquo;t understand things. You just get used to them.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ll leave you with a parting&lt;/p&gt;
 &lt;h2 id=&#34;exercise&#34;&gt;Exercise&lt;/h2&gt;
 &lt;p&gt;Flip your paper over. Draw a 2-column table. Rather than trying to come up with a situation, just name the columns &amp;ldquo;a&amp;rdquo; and &amp;ldquo;b&amp;rdquo;, and fill the table with random numbers and letters. Not too many of them, or you&amp;rsquo;ll be here all day.&lt;/p&gt;
