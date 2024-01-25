@@ -42,7 +42,7 @@
   <meta itemprop="name" content="Three Ways to Draw Data Tables">
 <meta itemprop="description" content="Intro This post is about three types of diagram: These look different, but they&rsquo;re really just different ways to convey the same information. We&rsquo;ll learn how to convert back and forth between them, which is a handy skill if you spot them in the wild. There&rsquo;s a fancy name for these diagrams. If you want to impress people, you can call them all Binary Relation Diagrams. You could also just"><meta itemprop="datePublished" content="2023-08-22T18:14:54-04:00" />
 <meta itemprop="dateModified" content="2023-08-22T18:14:54-04:00" />
-<meta itemprop="wordCount" content="2877">
+<meta itemprop="wordCount" content="2349">
 <meta itemprop="keywords" content="" />
 
   
@@ -106,12 +106,12 @@
 </div>
 <p>These look different, but they&rsquo;re really just different ways to convey the same information. We&rsquo;ll learn how to convert back and forth between them, which is a handy skill if you spot them in the wild.</p>
 <p>There&rsquo;s a fancy name for these diagrams. If you want to impress people, you can call them all <span class="introvocab">Binary Relation Diagrams</span>. You could also just call them <span class="introvocab">Relations</span>. (I&rsquo;ll be saying <span class="introvocab">Relations</span> a lot, because I want to save the word &ldquo;Table&rdquo; specifically for the middle diagram type.)</p>
-<p>This post is the first in a series. The series will be about relations, and also about a special kind of relation called a <span class="introvocab">Function</span>. My overall goal is to convince you that <em>functions look like this</em>:</p>
+<p>(Note: This post is the first in a series. The series will be about relations, and also about a special kind of relation called a <span class="introvocab">Function</span>. My overall goal is to convince you that <em>functions look like this</em>:</p>
 <div class="centerer">
 <img alt="A diagram with some balls on the left and squares on the right. The balls and squares are grouped into highlighted regions. Each region contains multiple balls, but only one square. All balls are contained in a region, but some squares are on their own." src="assets/Functions.drawio.svg" width="324pt" height="324pt">
 </div>
 <p>Later in the series, we&rsquo;ll talk about connections between diagrams, math, programming, and databases. We&rsquo;ll see how these different fields study similar subject matter in very different ways, and learn how to translate between them.</p>
-<p>(Don&rsquo;t worry though. This post is standalone, and it won&rsquo;t have any math in it. Only pictures :)</p>
+<p>Don&rsquo;t worry though. This post is standalone, and it won&rsquo;t have any math in it. Only pictures :)</p>
 <!--
 People think math is boring and hard to understand. They're right, but I wish they weren't.
 
@@ -339,7 +339,7 @@ If it helps, you can compare the &ldquo;Pining&rdquo; graph:</p>
 <h2 id="equivalent-diagrams">Equivalent diagrams</h2>
 <p>We now have three ways to draw relations: <span class="introvocab">Digraphs</span>, <span class="introvocab">Two-Column Tables</span>, and <span class="introvocab">2D Plots</span>.</p>
 <p>I want to convince you that these types of diagrams are <em>equivalent</em>: you can convert between them as needed, without losing information.</p>
-<p>If this post <em>were</em> about math, this is where I would write you a <span class="introvocab">proof</span>. See, to convince each other of things, mathematicians write &ldquo;proofs&rdquo;. A &ldquo;proof&rdquo; is a strategy in a board game. The basic moves in the board game are supposed to be really simple. So simple, that everybody agrees they should be allowed. Bigger strategies are built up out of simple moves. (In this case, the moves would be things like converting between diagrams.)</p>
+<p>If this post were about <em>formal</em> math, this is where I would write you a <span class="introvocab">proof</span>. See, to convince each other of things, mathematicians write &ldquo;proofs&rdquo;. A &ldquo;proof&rdquo; is a strategy in a board game. The basic moves in the board game are supposed to be really simple. So simple, that everybody agrees they should be allowed. Bigger strategies are built up out of simple moves. (In this case, the moves would be things like converting between diagrams.)</p>
 <p>I don&rsquo;t want to explain a bunch of formal game rules here &ndash; they can get pretty dry. But I still want to convince you like I&rsquo;d convince a mathematician. See, mathematicians have a high bar to be &ldquo;convinced&rdquo; of things. If you tell them something &ldquo;works&rdquo;, they&rsquo;ll ask <em>how</em> it works. They&rsquo;ll also ask what <span class="introvocab">conditions</span> need to be met for it to work. And usually, they&rsquo;ll want to try it out for themselves.</p>
 <p>We&rsquo;re not doing math here, but we <em>are</em> talking about diagrams. So far I&rsquo;ve been drawing all of them. Why not try drawing some yourself?</p>
 <h4 id="drawing-exercise-1">Drawing Exercise 1</h4>
@@ -658,100 +658,30 @@ If it helps, you can compare the &ldquo;Pining&rdquo; graph:</p>
 <p>(In capital letters. Database programming started in the 70s, when capital letters were still cool.)</p>
 <p>Once you&rsquo;ve made your choice, finish the exercise like last time. Did you end up back where you started?</p>
 <!-- (Remark: the real world isn't neatly divided into "types". They're just an organizational tool.) -->
-<h2 id="equality--stretchiness">Equality &amp; Stretchiness</h2>
-<p>There&rsquo;s one more thing I want to cover in this post. It&rsquo;s what I said before:</p>
-<div class="centerer">
-<p><b>Digraphs are stretchy.</b></p>
-</div>
-<p>So for instance, we would consider these three digraphs to be the same, because we can rearrange and stretch them into each other:</p>
-<div class="centerer">
-<img alt="TODO" src="assets/Three_Same.svg" width="500pt">
-</div>
-<p>To write down that we think two things are the same, we put an equals sign between them:</p>
-<div class="centerer">
-<img alt="TODO" src="assets/Three_Equal.svg" width="500pt">
-</div>
-<p>(We could also use a three-directional equal sign:</p>
-<div class="centerer">
-<img alt="TODO" src="assets/Threeary_Equal.svg" width="500pt">
-</div>
-<p>But we haven&rsquo;t talked about ternary relations yet.)</p>
-<p>It might seem a little strange to put an equals sign between things that aren&rsquo;t <em>exactly</em> the same. But you actually do this all the time in math. Consider the equation:</p>
-<div class="center-sequence">
-<p class="big">1 + 1</p><div class="center-sequence-fence-post">=</div><p class="big">2</p>
-</div>
-<p>The things on either side of the equal sign here aren&rsquo;t exactly the same &ndash; they&rsquo;re just <em>the same enough for our purposes</em>. You could also think of them as <em>different ways to accomplish the same thing.</em> To get a &ldquo;2&rdquo;, you can take two &ldquo;1&quot;s and add them together, or you can just write down a &ldquo;2&rdquo;.</p>
-<p>In the case of our digraphs, we consider the above diagrams to be <em>different ways to draw the same digraph</em>. Since the digraph is stretchy, it doesn&rsquo;t matter how it&rsquo;s laid out in space.</p>
-<p>We can come up with similar rules for our other diagram types. For example, I declare that our tables are unordered: we agree not to care about the order of the rows. So we can write:</p>
-<div class="center-sequence">
-<table class="diagramtable">
-        <thead>
-            <tr><th class="left">person: Person</th><th class="right">likes: Person</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>A</td><td>B</td></tr>
-            <tr><td>B</td><td>C</td></tr>
-        </tbody>
-    </table>
-<div class="center-sequence-fence-post">=</div>
-<table class="diagramtable">
-        <thead>
-            <tr><th class="left">person: Person</th><th class="right">likes: Person</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>B</td><td>C</td></tr>
-            <tr><td>A</td><td>B</td></tr>
-        </tbody>
-    </table>
-</div>
-<p>We now know how to tell when digraphs are the same, and how to tell when tables are the same. What about 2D Plots?</p>
-<h4 id="drawing-exercise-3">Drawing Exercise 3</h4>
-<p>Come up with two 2D plots that look different, but convey the same information. Write an equals sign between them.</p>
-<details>
-<summary>Hint</summary>
-You could rearrange rows, rearrange columns, move a legend to the opposite side, or even turn the whole plot 45 degrees. Nobody can stop you.
-</details>
 <h2 id="conclusion">Conclusion</h2>
-<p>At some point we seem to have slipped into talking about math. My mistake.</p>
-<p>Well, since we&rsquo;re already here, might as well go further. So far we&rsquo;ve only talked about binary relations. What about functions?</p>
-<p>I&rsquo;m not going to formally define them yet, but here&rsquo;s a taste of where we&rsquo;re going. Suppose we have a bunch of number-expressions &ndash; things like &ldquo;1 + 1&rdquo;, &ldquo;9 - 6&rdquo;, &ldquo;(5 + 7) / 2&rdquo;:</p>
+<p>Now maybe you are starting to be convinced that these:</p>
 <div class="centerer">
-<img alt="TODO" src="assets/Terms_Bare.svg" width="250pt">
+<img src="assets/Three_Diagrams.svg" width="600pt">
 </div>
-<p>I like to picture an endless wall of these, stretching off into the distance:</p>
+<p>Are the same. Hooray?</p>
+<p>Still, you might be wondering: <em>why are they the same, really</em>?</p>
+<p>In my opinion it is because <em>digraphs are stretchy</em>. All of these pictures should be understood as pictures of the <em>same</em> stretchy digraph, just with some parts drawn in different ways.</p>
+<p>Here, let me show you:</p>
 <div class="centerer">
-<img alt="TODO" src="assets/CircleWall.png" width="700pt">
+<img src="assets/Three_Diagrams_Detailed.svg" width="700pt">
 </div>
-<p>That&rsquo;s hard to draw though.</p>
-<p>In elementary school, we&rsquo;re taught to <em>evaluate</em> number-expressions &ndash; to convert them to <em>values</em>, that is, numbers.</p>
-<p>We can draw this:</p>
-<div class="centerer">
-<img alt="TODO" src="assets/Terms_Eval.svg" width="450pt">
-</div>
-<p>There&rsquo;s another way to think about this situation (which becomes more important when you get to algebra). Instead of fully evaluating things, we just ask whether or not they&rsquo;re equal to each other. This looks like:</p>
-<div class="centerer">
-<img alt="TODO" src="assets/Terms_Equal.svg" width="450pt">
-</div>
-<p>(The loops might seem odd, but they&rsquo;re part of how equality is usually defined: 1+1 = 1+1. Expressions equal themselves.)</p>
-<p>Let&rsquo;s combine these pictures:</p>
-<div class="centerer">
-<img alt="TODO" src="assets/Terms_Equal_Eval.svg" width="500pt">
-</div>
-<p>(Ignore the overlapping edges. Really, this oughtta be a 3-dimensional diagram. You could make it with spaghetti and marshmallows&hellip;)</p>
-<p>Now, compare:</p>
-<div class="centerer">
-<img alt="A diagram with some purple balls on the left and orange squares on the right. The balls and squares are grouped into highlighted regions. Each region contains multiple balls, but only one square. All balls are contained in a region, but some squares are on their own." src="assets/Functions.drawio.svg" width="324pt" height="324pt">
-</div>
-<p>This is that vague picture I drew at the beginning. It&rsquo;s what I think a function looks like.</p>
-<p>You might see some connection between these diagrams. The rest of this series will be spent making this connection precise.</p>
-<p>We&rsquo;re going to learn the rules of the board game of math, and how to compose them into proofs. This&rsquo;ll look a lot like what we&rsquo;ve been doing so far, we&rsquo;ll just be more uptight about it. We&rsquo;ll learn about different ways to combine and connect different relations. And we&rsquo;ll learn the definition of a function, and how to unpack it to visualize the rich structure it implies.</p>
-<p>We&rsquo;ll also talk about how functions &ndash; and relations &ndash; are only part of the picture. I like them, though, because they&rsquo;re so easy to visualize.</p>
-<p>For now, I&rsquo;ll leave you with a parting &ndash;</p>
+<p>The tildes (~) mean &ldquo;is like&rdquo;, which is pretty vague, so I hope you can see what I mean.
+I think the strangest part of this diagram is the transformation on the left side &ndash; modifying a graph by duplicating nodes.
+Once you accept that part, the rest is pretty straightforward.</p>
+<p>(John Von Neumann once said: &ldquo;Young man, in mathematics you don&rsquo;t understand things. You just get used to them.&rdquo;)</p>
+<p>I&rsquo;ll leave you with a parting</p>
 <h2 id="exercise">Exercise</h2>
 <p>Flip your paper over. Draw a 2-column table. Rather than trying to come up with a situation, just name the columns &ldquo;a&rdquo; and &ldquo;b&rdquo;, and fill the table with random numbers and letters. Not too many of them, or you&rsquo;ll be here all day.</p>
 <p>Aren&rsquo;t you curious what digraph you&rsquo;ve created? Convert your table to a digraph &ndash; watch it unfold. Try rearranging the nodes to see other forms it might take.</p>
 <p>Also, try drawing it as a 2D plot. Honestly, this will probably just look like TV static, but it&rsquo;s good to practice.</p>
-<p>(If you want more, I&rsquo;ve got another page where we play with <a href="../three-ways-to-draw-tables-bonus">tables with THREE columns</a>. There&rsquo;s also links to further reading.)</p>
+<h2 id="further-links">Further links</h2>
+<p><a href="../equality-and-stretchiness">The next post in this series</a></p>
+<p><a href="../three-ways-to-draw-tables-bonus">A page about tables with THREE columns</a></p>
 
     
   </article>
@@ -776,7 +706,7 @@ You could rearrange rows, rearrange columns, move a legend to the opposite side,
 
     <footer id="footer">
     <div>
-        <span>© 2022</span> - <span>2023</span>
+        <span>© 2022</span> - <span>2024</span>
     </div>
 
     <div>
